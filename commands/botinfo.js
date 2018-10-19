@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
     .setColor("#7f4870")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
-    .addField("**Твиттер**, "https://twitter.com/onedostupov"")
     .addField("Имя Бота", bot.user.username)
     .addField("Создан", bot.user.createdAt, true);
     message.channel.send(botembed);
