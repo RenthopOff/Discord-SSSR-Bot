@@ -1,0 +1,10 @@
+{
+  "prefix" : "*",
+  "red": "#b70000",
+  "orange": "#ff6a00",
+  "green": "#00ff26",
+  "purple": "#d604cf",
+  "black": "000000",
+  "grey": "#808080",
+  "blackgreen" : "#1cac78"
+}
