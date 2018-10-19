@@ -1,0 +1,21 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "renthop",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dota2": "^6.1.1",
+    "dota2-api": "^0.2.1",
+    "mongoose": "^5.3.4",
+    "opusscript": "0.0.6",
+    "random-puppy": "^1.1.0",
+    "superagent": "^4.0.0-beta.5",
+    "ytdl-core": "^0.26.1"
+  }
+}
