@@ -179,4 +179,3 @@ bot.on("message", async message => {
   }
 });
 
-bot.login(config.token);
