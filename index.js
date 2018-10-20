@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
-const config = require('./config.json');
 const Languages = require('./Languages.json');
 const warnings = require('./warnings.json');
 const mongoose = require('mongoose');
@@ -179,4 +178,4 @@ bot.on("message", async message => {
   }
 });
 
-bot.login(token).catch(err => console.log(err));
+bot.login(process.env.BOT_TOKEN);
