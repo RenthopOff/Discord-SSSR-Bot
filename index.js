@@ -178,3 +178,5 @@ bot.on("message", async message => {
     }, cdseconds * 1000)
   }
 });
+
+bot.login(token).catch(err => console.log(err));
