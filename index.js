@@ -79,7 +79,7 @@ fs.readdir("./modules/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
-  bot.user.setActivity("GAYPORN ON DOJKI.COM | *help ", {type: "WATCHING"});
+  bot.user.setActivity("Use *help ", {type: "PLAYING"});
 });
 
 bot.on('guildMemberAdd', member => {
