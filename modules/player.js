@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Полное Имя", message.author.tag, true)
   .addField("ID", message.author.id)
   .addField("Статус Гражданина:", user.presence.status, true)
-  .addField("Сейчас играет:", `${user.presence.game ? user.presence.game.name: 'Сидит Пердит!'}`)
+  .addField("Сейчас играет:", `${user.presence.game ? user.presence.game.name: 'Просто в сети!'}`)
   .addField("Зашел", message.author.createdAt);
 
   message.channel.send(playerembed);
