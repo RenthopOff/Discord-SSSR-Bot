@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Время", message.createdAt)
     .addField("Причина", rreason);
 
-    let reportschannel = message.guild.channels.find(`name`, "⚙report-list");
+    let reportschannel = message.guild.channels.find(`name`, "📥доносы");
     if(!reportschannel) return message.channel.send("Где канал для репорт,а сучка?!");
 
 
