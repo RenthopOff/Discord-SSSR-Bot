@@ -259,9 +259,9 @@ bot.on("message", async message => {
       let modembed = new Discord.RichEmbed()
       .setDescription("**Меню помощи Администрации**")
       .setColor("#d53032")
-      .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА", true)
-      .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА", true)
-      .addField("** *report **", "Выдать репорт гражданину", true);
+      .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
+      .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
+      .addField("** *report **", "Выдать репорт гражданину");
 
       try{
         await message.author.send(modembed);
