@@ -1,14 +1,17 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
+const config = require('./config.json');
 const Languages = require('./Languages.json');
 const warnings = require('./warnings.json');
 const mongoose = require('mongoose');
+const prefix = botconfig.prefix;
+const YouTube = require('simple-youtube-api');
 const prefixes = require('./prefixes.json');
 const Attachment = require('discord.js');
 const RichEmbed = require('discord.js');
+const fs = require('fs');
 const ytdl = require('ytdl-core');
 var server = {};
-const fs = require('fs');
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.modules - new Discord.Collection();
@@ -16,7 +19,6 @@ bot.nsfw = new Discord.Collection();
 bot.images = new Discord.Collection();
 let purple = botconfig.purple;
 let red = botconfig.red;
-let prefix = botconfig.prefix;
 let orange = botconfig.orange;
 let green = botconfig.green;
 let black = botconfig.black;
@@ -83,7 +85,6 @@ bot.on("ready", async () => {
 
   bot.user.setActivity("Use *help ", {type: "PLAYING"});
 });
-
 bot.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
@@ -123,22 +124,6 @@ bot.on('guildMemberRemove', member => {
 
         channel.sendEmbed(embed);
 });
-
-bot.on("message", async message => {
-
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
-
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
-
-  let prefix = prefixes[message.guild.id].prefixes;
-  console.log(prefix);
-});
 bot.on("message", async message => {
   if(message.content.startsWith("flex?")) {
     message.channel.send({files:["./images/flex.jpg"]});
@@ -165,9 +150,44 @@ bot.on("message", async message => {
   let sender = message.author;
   let msg = message.content.toUpperCase();
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(bot,message,args);
-  if(!message.content.startsWith(prefix)) return;
 
+  if(commandfile) commandfile.run(bot,message,args);
+
+  if(cmd === `${prefix}botinfo`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setDescription("**Version bot 1.5**")
+    .setColor("#7f4870")
+    .setThumbnail(bicon)
+    .addField("**Cоздатель**", message.guild.owner)
+    .addField("Имя Бота", bot.user.username)
+    .addField("Создан", "**27.09.2018 14:19**", true);
+
+    return message.channel.send(botembed);
+  }
+
+  if(cmd === `${prefix}serverinfo`){
+    const verificationLevel = message.guild.verificationLevel;
+    const verificationLevels = ['Нету', 'Легкий', 'Средний', 'Высокий', 'Высочайший']
+
+    let serverembed = new Discord.RichEmbed()
+    .setTitle("Информация")
+    .setColor("#240935")
+    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
+    .setTimestamp()
+    .setThumbnail(message.guild.iconURL)
+    .addField('**Название**', `${message.guild.name}`, true)
+    .addField('**Владелец**', message.guild.owner.user.tag, true)
+    .addField('**ID**', message.guild.id, true)
+    .addField('**Кол-во Каналов**', `${message.guild.channels.filter(channel => channel.type === 'voice').size} *голосовых*/ ${message.guild.channels.filter(channel => channel.type === 'text').size} *текстовых*`, true)
+    .addField("**Дата создания cервера**", "06.11.2017 17:43", true)
+    .addField("**Участников**", `${message.guild.members.filter(member => member.user.bot).size} *ботов* / ${message.guild.memberCount} *участников*`, true)
+    .addField("**Регион**", message.guild.region, true)
+    .addField("**Уровень Проверки**", `${verificationLevels[message.guild.verificationLevel]}`, true)
+    .addField("**Кол-во Ролей**", message.guild.roles.size, true);
+    return message.channel.send(serverembed);
+  }
 });
 bot.on("message", async message => {
   if(cooldown.has(message.author.id)){
@@ -184,4 +204,4 @@ bot.on("message", async message => {
   }
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(config.token);
