@@ -16,6 +16,7 @@ bot.nsfw = new Discord.Collection();
 bot.images = new Discord.Collection();
 let purple = botconfig.purple;
 let red = botconfig.red;
+let prefix = botconfig.prefix;
 let orange = botconfig.orange;
 let green = botconfig.green;
 let black = botconfig.black;
