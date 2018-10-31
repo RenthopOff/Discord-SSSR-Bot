@@ -2,10 +2,12 @@ const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
 const config = require('./config.json');
 const Languages = require('./Languages.json');
+const ms = require("ms");
 const warnings = require('./warnings.json');
 const mongoose = require('mongoose');
 const prefix = botconfig.prefix;
 const YouTube = require('simple-youtube-api');
+const prefixes = require('./prefixes.json');
 const Attachment = require('discord.js');
 const RichEmbed = require('discord.js');
 const fs = require('fs');
@@ -149,7 +151,6 @@ bot.on("message", async message => {
   let sender = message.author;
   let msg = message.content.toUpperCase();
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
-
   if(commandfile) commandfile.run(bot,message,args);
 
   if(cmd === `${prefix}botinfo`){
