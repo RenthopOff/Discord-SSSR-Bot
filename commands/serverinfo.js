@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
   .addField('**Владелец**', message.guild.owner.user.tag, true)
   .addField('**ID**', message.guild.id, true)
   .addField('**Кол-во Каналов**', `${message.guild.channels.filter(channel => channel.type === 'voice').size} *голосовых*/ ${message.guild.channels.filter(channel => channel.type === 'text').size} *текстовых*`, true)
-  .addField("**Дата создания бота**", message.guild.createdAt, true)
+  .addField("**Дата создания cервера**", message.guild.createdAt, true)
   .addField("**Участников**", `${message.guild.members.filter(member => member.user.bot).size} *ботов* / ${message.guild.memberCount} *участников*`, true)
   .addField("**Регион**", message.guild.region, true)
   .addField("**Уровень Проверки**", `${verificationLevels[message.guild.verificationLevel]}`, true)
