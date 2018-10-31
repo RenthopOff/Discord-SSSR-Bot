@@ -5,7 +5,6 @@ const ms = require("ms");
 const warnings = require('./warnings.json');
 const mongoose = require('mongoose');
 const prefix = botconfig.prefix;
-const YouTube = require('simple-youtube-api');
 const prefixes = require('./prefixes.json');
 const Attachment = require('discord.js');
 const RichEmbed = require('discord.js');
