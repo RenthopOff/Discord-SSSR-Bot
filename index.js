@@ -135,6 +135,9 @@ bot.on("message", async message => {
       prefixes: botconfig.prefix
     };
   }
+
+  let prefix = prefixes[message.guild.id].prefixes;
+  console.log(prefix);
 });
 bot.on("message", async message => {
   if(message.content.startsWith("flex?")) {
