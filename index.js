@@ -253,8 +253,9 @@ bot.on("message", async message => {
     .setTimestamp();
 
     return message.channel.send(helpembed);
-
-    if(message.member.hasPermission("MANAGE_MESSAGES")){
+    }
+  if(cmd === `${prefix}help`){
+       if(message.member.hasPermission("MANAGE_MESSAGES")){
       let modembed = new Discord.RichEmbed()
       .setDescription("**Меню помощи Администрации**")
       .setColor("#320b35")
@@ -268,7 +269,6 @@ bot.on("message", async message => {
       return message.channel.send(helpembed);
     }
   }
-  
 });
 bot.on("message", async message => {
   if(cooldown.has(message.author.id)){
