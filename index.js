@@ -258,7 +258,7 @@ bot.on("message", async message => {
       if(message.member.hasPermission("MANAGE_MESSAGES")){
       let modembed = new Discord.RichEmbed()
       .setDescription("**Меню помощи Администрации**")
-      .setColor("#320b35")
+      .setColor("#d53032")
       .addField("** *report **", "Выдать репорт гражданину", true);
 
       try{
