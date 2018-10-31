@@ -241,6 +241,34 @@ bot.on("message", async message => {
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
   }
+    if(cmd === `${prefix}help`){
+    let helpembed = new Discord.RichEmbed()
+    .setDescription("**:gear:Меню Помощи:gear:**")
+    .setColor("#cca817")
+    .addField("** *botinfo **", "Информация о боте")
+    .addField("** *serverinfo **", "Информация о нашем сервере")
+    .addField("** *playerinfo **", "Информация о игроке")
+    .addField("** *rwallpapaer **", "Получить рандомный фон")
+    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
+    .setTimestamp();
+
+    return message.channel.send(helpembed);
+
+    if(message.member.hasPermission("MANAGE_MESSAGES")){
+      let modembed = new Discord.RichEmbed()
+      .setDescription("**Меню помощи Администрации**")
+      .setColor("#320b35")
+      .addField("** *report **", "Выдать репорт гражданину", true);
+
+      try{
+        await message.author.send(modembed);
+      }catch(e){
+        message.reply("**Ты не админ что бы получать этот список команд!**");
+      }
+      return message.channel.send(helpembed);
+    }
+  }
+  
 });
 bot.on("message", async message => {
   if(cooldown.has(message.author.id)){
