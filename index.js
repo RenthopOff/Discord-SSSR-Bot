@@ -257,4 +257,4 @@ bot.on("message", async message => {
   }
 });
 
-bot.login(config.token);
+bot.login(BOT.TOKEN);
