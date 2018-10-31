@@ -242,7 +242,7 @@ bot.on("message", async message => {
     kickChannel.send(kickEmbed);
   }
     if(cmd === `${prefix}help`){
-    let helpembed = new Discord.RichEmbed()
+    let helpadembed = new Discord.RichEmbed()
     .setDescription("**:gear:Меню Помощи:gear:**")
     .setColor("#cca817")
     .addField("** *botinfo **", "Информация о боте")
@@ -252,10 +252,10 @@ bot.on("message", async message => {
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
-    return message.channel.send(helpembed);
+    return message.channel.send(helpadembed);
     }
-  if(cmd === `${prefix}help`){
-       if(message.member.hasPermission("MANAGE_MESSAGES")){
+  if(cmd === `${prefix}helpadmin`){
+      if(message.member.hasPermission("MANAGE_MESSAGES")){
       let modembed = new Discord.RichEmbed()
       .setDescription("**Меню помощи Администрации**")
       .setColor("#320b35")
