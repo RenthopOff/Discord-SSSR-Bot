@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
     let muterole = message.guild.roles.find(`name`, "muted");
     if(!muterole) return message.reply("Оу щит,данной роли не существует!");
 
-    let mutetime = "10s";
+    let mutetime = "5m";
     await(wUser.addRole(muterole.id));
     message.channel.send(`<@${wUser.id}> был выдан мут за нарушение 5 правил.`);
 
