@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-exports.run = async (client, message, args, color) => {
+module.exports.run = async (bot, message, args, color) => {
 
     let start = Date.now(); message.channel.send(message.channel.id, 'Pong! ').then(message => { 
     let diff = (Date.now() - start); 
@@ -17,7 +17,7 @@ exports.run = async (client, message, args, color) => {
 
 }
 
-exports.help = {
+module.exports.help = {
     name: 'ping',
     category: 'INFO'
 }
