@@ -121,21 +121,6 @@ bot.on('guildMemberRemove', member => {
         channel.sendEmbed(embed);
 });
 bot.on("message", async message => {
-  if(message.content.startsWith("flex?")) {
-    message.channel.send({files:["./images/flex.jpg"]});
-  }
-});
-bot.on("message", async message => {
-  if(message.content.startsWith("мопс?")) {
-    message.channel.send({files:["./images/mops.jpg"]});
-  }
-});
-bot.on("message", async message => {
-  if(message.content.startsWith("макс?")) {
-    message.channel.send({files:["./images/maks.jpeg"]});
-  }
-});
-bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
