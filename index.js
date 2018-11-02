@@ -246,7 +246,8 @@ bot.on("message", async message => {
     .addField("** *serverinfo **", "Информация о нашем сервере")
     .addField("** *playerinfo **", "Информация о игроке")
     .addField("** *rwallpapaer **", "Получить рандомный фон")
-     .addField("** *coinflip **", "Поиграть в орла и решку")
+    .addField("** *coinflip **", "Поиграть в орла и решку")
+    .addField("** *roulette **", "Поиграть в русскую рулетку")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
