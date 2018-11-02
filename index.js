@@ -81,6 +81,15 @@ bot.on("ready", async () => {
 
   bot.user.setActivity("Use *help ", {type: "PLAYING"});
 });
+bot.on('channelCreate', async channel => {
+
+  console.log(`${channel.name} has been created.`);
+
+if (channel.type != 'text') return;
+  let sChannel = channel.guild.channels.find('name', 'name channel here');
+  sChannel.send(`${channel} был создан`);
+
+});
 bot.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
