@@ -242,12 +242,12 @@ bot.on("message", async message => {
     let helpadembed = new Discord.RichEmbed()
     .setDescription("**:gear:Меню Помощи:gear:**")
     .setColor("#cca817")
-    .addField("** *botinfo **", "Информация о боте")
-    .addField("** *serverinfo **", "Информация о нашем сервере")
-    .addField("** *playerinfo **", "Информация о игроке")
-    .addField("** *rwallpapaer **", "Получить рандомный фон")
-    .addField("** *coinflip **", "Поиграть в орла и решку")
-    .addField("** *roulette **", "Поиграть в русскую рулетку")
+    .addField("** *botinfo **", "Информация о боте🤖")
+    .addField("** *serverinfo **", "Информация о нашем сервере🏙")
+    .addField("** *playerinfo **", "Информация о игроке👨")
+    .addField("** *rwallpapaer **", "Получить рандомный фон📸")
+    .addField("** *coinflip **", "Поиграть в орла и решку🦅")
+    .addField("** *roulette **", "Поиграть в русскую рулетку🔫")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
