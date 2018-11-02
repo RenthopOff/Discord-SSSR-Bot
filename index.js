@@ -12,7 +12,6 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.modules - new Discord.Collection();
 bot.nsfw = new Discord.Collection();
-bot.images = new Discord.Collection();
 let purple = botconfig.purple;
 let red = botconfig.red;
 let orange = botconfig.orange;
@@ -247,6 +246,7 @@ bot.on("message", async message => {
     .addField("** *serverinfo **", "Информация о нашем сервере")
     .addField("** *playerinfo **", "Информация о игроке")
     .addField("** *rwallpapaer **", "Получить рандомный фон")
+     .addField("** *coinflip **", "Поиграть в орла и решку")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
