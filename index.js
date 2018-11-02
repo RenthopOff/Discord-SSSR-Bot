@@ -248,7 +248,6 @@ bot.on("message", async message => {
     .addField("** *rwallpapaer **", "Получить рандомный фон📸")
     .addField("** *coinflip **", "Поиграть в орла и решку🦅")
     .addField("** *roulette **", "Поиграть в русскую рулетку🔫")
-    .addField("** *steamstore **", "Найти игру в магазине STEAM🎮")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
