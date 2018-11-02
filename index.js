@@ -87,7 +87,7 @@ bot.on('channelCreate', async channel => {
 
 if (channel.type != 'text') return;
   let sChannel = channel.guild.channels.find('name', 'name channel here');
-  sChannel.send(`${channel} был создан`);
+  sChannel.send(`Текстовый ${channel} был создан на сервере`);
 
 });
 bot.on('guildMemberAdd', member => {
