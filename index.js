@@ -265,7 +265,7 @@ bot.on("message", async message => {
       .setColor("#d53032")
       .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
       .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
-      .addField("** *report **", "Выдать репорт гражданину");
+      .addField("** *clear **", "Очистка чата до 50 сообщений");
 
       try{
         await message.author.send(modembed);
