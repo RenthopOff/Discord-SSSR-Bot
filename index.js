@@ -165,12 +165,16 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}serverinfo`){
     const verificationLevel = message.guild.verificationLevel;
-    const verificationLevels = ['Нету', 'Легкий', 'Средний', 'Высокий', 'Высочайший']
+    const verificationLevels = ['Отсутствует', 'Легкий', 'Средний', 'Высокий', 'Высочайший']
 
+    let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
+    let day = message.guild.createdAt.getDate()
+    let month = 1 + message.guild.createdAt.getMonth()
+    let year = message.guild.createdAt.getFullYear()
     let serverembed = new Discord.RichEmbed()
     .setTitle("Информация")
     .setColor("#320b35")
-    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
+    .setFooter(`Сервер был создан • ${day}.${month}.${year}`)
     .setTimestamp()
     .setThumbnail(message.guild.iconURL)
     .addField('**Название**', `${message.guild.name}`, true)
@@ -180,6 +184,7 @@ bot.on("message", async message => {
     .addField("**Дата создания cервера**", "06.11.2017 17:43", true)
     .addField("**Участников**", `${message.guild.members.filter(member => member.user.bot).size} *ботов* / ${message.guild.memberCount} *участников*`, true)
     .addField("**Регион**", message.guild.region, true)
+    .addField("Cейчас в онлайне", online.size, true)
     .addField("**Уровень Проверки**", `${verificationLevels[message.guild.verificationLevel]}`, true)
     .addField("**Кол-во Ролей**", message.guild.roles.size, true);
     return message.channel.send(serverembed);
