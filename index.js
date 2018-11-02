@@ -3,6 +3,7 @@ const botconfig = require('./botconfig.json');
 const Languages = require('./Languages.json');
 const ms = require("ms");
 const mongoose = require('mongoose');
+const steam = require('steam-provider');
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
 const RichEmbed = require('discord.js');
