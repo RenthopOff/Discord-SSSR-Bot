@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
 const Languages = require('./Languages.json');
 const ms = require("ms");
-const warnings = require('./warnings.json');
 const mongoose = require('mongoose');
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
