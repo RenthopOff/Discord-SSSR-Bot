@@ -169,7 +169,7 @@ bot.on("message", async message => {
 
     let serverembed = new Discord.RichEmbed()
     .setTitle("Информация")
-    .setColor("#240935")
+    .setColor("#320b35")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp()
     .setThumbnail(message.guild.iconURL)
