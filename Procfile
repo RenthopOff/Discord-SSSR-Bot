@@ -1,1 +1,1 @@
-worker: npm install steam-provider
+worker: node index.js
