@@ -1,22 +1,47 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+const botconfig = require("../botconfig.json");
 
-module.exports.run = async (bot, message, args) => {
-  if(!args[2]) return message.reply("Задай полный вопрос!");
-  let replies = ["Да.", "Нет", "Не знаю", "Задай еще раз вопрос", "50/50", "Согласен", "Да нее"];
-
-  let result = Math.floor((Math.random() * replies.length))
-  let question = args.slince(1).join(" ");
-
-  let ballembed = new Discord.RichEmbed()
-  .setAuthor(message.author.tag)
-  .setColor("#FF9900")
-  .addField("Вопрос", question)
-  .addField("Ответ", replies[result])
-
-  message.channel.send(ballembed)
+function randomIntInc(low, high) {
+    return Math.floor(Math.random() * (high - low + 1) + low);
+}
+module.exports.run = async (client, message, args) => {
+    var rnd = randomIntInc(1, 5);
+    if (rnd === 1) {
+        const embed1 = new Discord.RichEmbed()
+            .setDescription(':8ball: 8ball')
+            .setColor('RANDOM')
+            .addField(args.join(" "), 'Нет')
+        message.channel.send(embed1);
+    } else if (rnd === 2) {
+        const embed2 = new Discord.RichEmbed()
+            .setDescription(':8ball: 8ball')
+            .setColor('RANDOM')
+            .addField(args.join(" "), 'Надо это хорошо обдумать.')
+        message.channel.send(embed2);
+    } else if (rnd === 3) {
+        const embed3 = new Discord.RichEmbed()
+            .setDescription(':8ball: 8ball')
+            .setColor('RANDOM')
+            .addField(args.join(" "), '50/50')
+        message.channel.send(embed3);
+    } else if (rnd === 4) {
+        const embed3 = new Discord.RichEmbed()
+            .setDescription(':8ball: 8ball')
+            .setColor('RANDOM')
+            .addField(args.join(" "), 'Невозможно')
+        message.channel.send(embed3);
+    } else if (rnd === 5) {
+        const embed3 = new Discord.RichEmbed()
+            .setDescription(':8ball: 8ball')
+            .setColor('RANDOM')
+            .addField(args.join(" "), 'Да')
+        message.channel.send(embed3);
+    }
 
 }
+exports.help = {
+    name: '8BALL',
+    description: 'Отвечаю на наши вопросы',
+    usage: '!8ball <вопрос>'
+};
 
-module.exports.help = {
-  name: "ball"
-}
