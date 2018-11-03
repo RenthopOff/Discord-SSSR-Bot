@@ -198,7 +198,7 @@ bot.on("message", async message => {
     let year = message.guild.createdAt.getFullYear()
     let serverembed = new Discord.RichEmbed()
     .setTitle("Информация")
-    .setColor("#320b35")
+    .setColor("#ff6800")
     .setFooter(`Сервер был создан • ${day}.${month}.${year}`)
     .setTimestamp()
     .setThumbnail(message.guild.iconURL)
