@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     let pingembed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .addField('API Ping : ', Math.floor(bot.ping) + 'ms')
-        .addField('БОТ ЗШТП : ', Math.floor(botping) + 'ms')
+        .addField('БОТ PING : ', Math.floor(botping) + 'ms')
         .addField('PING сообщения : ', '~' + Math.round(msgping2) + 'ms')
         .setTimestamp(new Date())
         .setFooter(`requested by ${message.author.tag}`);
