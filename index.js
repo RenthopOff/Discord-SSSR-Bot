@@ -154,6 +154,38 @@ bot.on("message", async message => {
 
     return message.channel.send(botembed);
   }
+  
+    if (cmd === `${prefix}weed`) {
+    return message.channel.send("**Начал курить!**").then(async msg => {
+        setTimeout(() => {
+            msg.edit('🚬');
+        }, 500);
+        setTimeout(() => {
+            msg.edit('🚬 ☁ ');
+        }, 700);
+        setTimeout(() => {
+            msg.edit('🚬 ☁☁ ');
+        }, 900);
+        setTimeout(() => {
+            msg.edit('🚬 ☁☁☁ ');
+        }, 1000);
+        setTimeout(() => {
+            msg.edit('🚬 ☁☁☁');
+        }, 1100);
+        setTimeout(() => {
+            msg.edit('🚬 ☁☁');
+        }, 1200);
+        setTimeout(() => {
+            msg.edit('🚬 ☁');
+        }, 1300);
+        setTimeout(() => {
+            msg.edit(`**Закончил курить!**`);
+        }, 1500);
+        setTimeout(() => {
+            msg.delete(`**Закончил курить!**`);
+        }, 6000);
+      });
+    }
 
   if(cmd === `${prefix}serverinfo`){
     const verificationLevel = message.guild.verificationLevel;
