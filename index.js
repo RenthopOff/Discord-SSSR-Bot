@@ -282,7 +282,8 @@ bot.on("message", async message => {
     .addField("** *roulette **", "Поиграть в русскую рулетку🔫")
     .addField("** *gay **", "Узнать на сколько ты гей🏳️‍:rainbow:")
     .addField("** *ping **", "Узнать пинг бота и ваш🖥")
-    .addField("** * **", "Узнать пинг бота и ваш")
+    .addField("** *weed **", "Дать боту покурить🚬")
+    .addField("** *8BALL **", "Поиграть в волшебный мяч🎱")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
