@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("ID", message.author.id)
   .addField("Статус Гражданина:", user.presence.status, true)
   .addField("Сейчас играет:", `${user.presence.game ? user.presence.game.name: 'Просто в сети!'}`)
-  .addField("Зашел", message.author.createdAt);
+  .addField("Joined Server:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, )
 
   message.channel.send(playerembed);
 }
