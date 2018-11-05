@@ -273,7 +273,7 @@ bot.on("message", async message => {
   }
     if(cmd === `${prefix}help`){
     let helpadembed = new Discord.RichEmbed()
-    .setDescription("**:gear:Меню Помощи:gear:**")
+    .setDescription("**:gear:Меню Помощи Сервера:gear:**")
     .setColor("#cca817")
     .addField("** *botinfo **", "Информация о боте🤖")
     .addField("** *serverinfo **", "Информация о нашем сервере🏙")
@@ -285,10 +285,28 @@ bot.on("message", async message => {
     .addField("** *ping **", "Узнать пинг бота и ваш🖥")
     .addField("** *weed **", "Дать боту покурить🚬")
     .addField("** *8BALL **", "Поиграть в волшебный мяч🎱")
+    .addField("** *kiss **", "Поцеловать кого-нибудь💏")
+    .addField("** *hug **", "Обнять кого-нибудь🤗")
+    .addField("** *slap **", "Шлепнуть кого-нибудь🔞")
+    .addField("** *nsfw_help **", "Узнать nfsw команды бота🔞")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
     return message.channel.send(helpadembed);
+    }
+    if(cmd === `${prefix}nsfw_help`){
+    let nsfwembed = new Discord.RichEmbed()
+    .setDescription("**:gear:Меню Помощи NSFW:gear:**")
+    .setColor("#cca817")
+    .addField("** *feet **", "🔞")
+    .addField("** *cum **", "🔞")
+    .addField("** *pussy **", "🔞")
+    .addField("** *hentai **", "🔞")
+    .addField("** *boobs **", "🔞")
+    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
+    .setTimestamp();
+
+    return message.channel.send(nsfwembed);
     }
   if(cmd === `${prefix}helpadmin`){
       if(message.member.hasPermission("MANAGE_MESSAGES")){
