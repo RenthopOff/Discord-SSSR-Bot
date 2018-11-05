@@ -9,12 +9,8 @@ exports.run = (bot, message, args, tools) => {
     const patEmb = new Discord.RichEmbed()
         .setColor(0xA901DB)
         .setImage(randomImage);
-    const sadEmb = new Discord.RichEmbed()
-        .setColor(0xA901DB)
-        .setImage('https://media.giphy.com/media/Y4z9olnoVl5QI/giphy.gif');
     if (!args[0]) {
-        message.channel.send(`<@${message.author.id}> поцеловал <@${message.author.id}>... ♥ ♥.`, {
-            embed: sadEmb
+        message.channel.send(`<@${message.author.id}> выбери кого-нибудь что бы поцеловать`, {
         });
         return;
     }
@@ -32,3 +28,4 @@ exports.run = (bot, message, args, tools) => {
 module.exports.help = {
     name: "kiss"
 }
+
