@@ -9,6 +9,7 @@ const RichEmbed = require('discord.js');
 const fs = require('fs');
 const xp = require('./xp.json');
 const ytdl = require('ytdl-core');
+const db = require('quick.db')
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.modules - new Discord.Collection();
