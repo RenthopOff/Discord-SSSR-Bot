@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   let role = args.join(" ").slice(22);
   if(!role) return message.reply("Выбери рроль!");
   let gRole = message.guild.roles.find(`name`, role);
-  if(!gRole) return message.reply("Не могу найти ее.");
+  if(!gRole) return message.reply("Не могу выдать ее!");
 
   if(rMember.roles.has(gRole.id)) return message.reply("❌ он ее уже имеет.");
   await(rMember.addRole(gRole.id));
