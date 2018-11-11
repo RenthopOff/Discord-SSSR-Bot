@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
   if(message.member.hasPermission("ADMINISTRATOR")) {
       let annonceembed = new Discord.RichEmbed()
-      .setColor("random")
+      .setColor("FF0000")
       .setTitle("Announcement")
       .setDescription(args.join(" "));
 
