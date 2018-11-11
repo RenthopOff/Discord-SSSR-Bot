@@ -273,7 +273,6 @@ bot.on("message", async message => {
   }
     if(cmd === `${prefix}help`){
     let helpadembed = new Discord.RichEmbed()
-    .setImage("https://images-ext-2.discordapp.net/external/v0edFI9oWuSe523E3IDXT_4vIpQKHXg3ExG2SH6UwK4/https/i.imgur.com/4e2Rnwq.png")
     .setDescription("**:gear:Меню Помощи Сервера:gear:**")
     .setColor("#cca817")
     .addField("** *botinfo **", "Информация о боте🤖")
@@ -310,19 +309,19 @@ bot.on("message", async message => {
     return message.channel.send(nsfwembed);
     }
   if(cmd === `${prefix}helpadmin`){
-      if(!message.member.hasPermission("ADMINISTRATOR")){
-              let modembed = new Discord.RichEmbed()
+      if(!message.member.hasPermission("MANAGE_MESSAGE")){
+              let moderembed = new Discord.RichEmbed()
               .setDescription("**Меню помощи Администрации**")
               .setColor("#d53032")
               .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
               .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
               .addField("** *clear **", "Очистка чата до 50 сообщений");
         try{
-          await message.author.send(modembed);
+          await message.author.send(moderembed);
           }catch(e){
             message.reply("**Ты не админ что бы получать этот список команд!**");
           }
-        return message.channel.send(modembed);
+        return message.channel.send(moderembed);
       }
   }
 });
