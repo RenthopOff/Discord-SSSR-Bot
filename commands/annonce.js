@@ -5,8 +5,8 @@ module.exports.run = async (bot, message, args) => {
   if(message.member.hasPermission("ADMINISTRATOR")) {
       let annonceembed = new Discord.RichEmbed()
       .setColor("FF0000")
-      .setTitle("Обновление")
-      .setTitle("@everyone")
+      .setTitle("Обновление от `${message.author.username}`")
+      .setTimestamp()
       .setDescription(args.join(" "));
 
       message.channel.send(annonceembed)
