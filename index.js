@@ -274,7 +274,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}help`){
     let helpadembed = new Discord.RichEmbed()
     .setDescription("**:gear:Меню Помощи Сервера:gear:**")
-    .setColor("#cca817")
+    .setColor("RANDOM")
     .addField("** *botinfo **", "Информация о боте🤖")
     .addField("** *serverinfo **", "Информация о нашем сервере🏙")
     .addField("** *playerinfo **", "Информация о игроке👨")
@@ -286,7 +286,6 @@ bot.on("message", async message => {
     .addField("** *weed **", "Дать боту покурить🚬")
     .addField("** *8BALL **", "Поиграть в волшебный мяч🎱")
     .addField("** *kiss **", "Поцеловать кого-нибудь💏")
-    .addField("** *hug **", "Обнять кого-нибудь🤗")
     .addField("** *slap **", "Шлепнуть кого-нибудь🔞")
     .addField("** *nsfw_help **", "Узнать nfsw команды бота🔞")
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
