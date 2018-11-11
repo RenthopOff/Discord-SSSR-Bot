@@ -274,7 +274,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}help`){
     let helpadembed = new Discord.RichEmbed()
     .setDescription("**:gear:Меню Помощи Сервера:gear:**")
-    .setColor("RANDOM")
+    .setColor('RANDOM')
     .addField("** *botinfo **", "Информация о боте🤖")
     .addField("** *serverinfo **", "Информация о нашем сервере🏙")
     .addField("** *playerinfo **", "Информация о игроке👨")
