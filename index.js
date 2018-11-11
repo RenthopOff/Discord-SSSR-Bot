@@ -309,21 +309,20 @@ bot.on("message", async message => {
     return message.channel.send(nsfwembed);
     }
   if(cmd === `${prefix}helpadmin`){
-      if(message.member.hasPermission("MANAGE_MESSAGES")){
-      let modembed = new Discord.RichEmbed()
-      .setDescription("**Меню помощи Администрации**")
-      .setColor("#d53032")
-      .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
-      .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
-      .addField("** *clear **", "Очистка чата до 50 сообщений");
-
-      try{
-        await message.author.send(modembed);
-      }catch(e){
-        message.reply("**Ты не админ что бы получать этот список команд!**");
+      if(!message.member.hasPermission("ADMINISTRATOR")){
+              let modembed = new Discord.RichEmbed()
+              .setDescription("**Меню помощи Администрации**")
+              .setColor("#d53032")
+              .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
+              .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
+              .addField("** *clear **", "Очистка чата до 50 сообщений");
+        try{
+          await message.author.send(modembed);
+          }catch(e){
+            message.reply("**Ты не админ что бы получать этот список команд!**");
+          }
+        return message.channel.send(modembed);
       }
-      return message.channel.send(helpembed);
-    }
   }
 });
 bot.on("message", async message => {
