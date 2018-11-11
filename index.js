@@ -275,6 +275,7 @@ bot.on("message", async message => {
     let helpadembed = new Discord.RichEmbed()
     .setDescription("**:gear:Меню Помощи Сервера:gear:**")
     .setColor("#cca817")
+    .setImage("https://images-ext-2.discordapp.net/external/v0edFI9oWuSe523E3IDXT_4vIpQKHXg3ExG2SH6UwK4/https/i.imgur.com/4e2Rnwq.png")
     .addField("** *botinfo **", "Информация о боте🤖")
     .addField("** *serverinfo **", "Информация о нашем сервере🏙")
     .addField("** *playerinfo **", "Информация о игроке👨")
