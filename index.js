@@ -83,7 +83,7 @@ bot.on("ready", async () => {
 });
 bot.on('channelCreate', async channel => {
 
-  console.log(`${channel.name} has been created.`);
+  console.log(`${channel.name} был создан.`);
 
 if (channel.type != 'text') return;
   let sChannel = channel.guild.channels.find('name', 'name channel here');
@@ -92,6 +92,7 @@ if (channel.type != 'text') return;
 });
 bot.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome');
+    let role = member.guild.roles.find(r => r.name == '⚒️ Работяга ⚒️')
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
@@ -104,7 +105,9 @@ bot.on('guildMemberAdd', member => {
         .addField('Сервер', `${member.guild.name}`, true )
         .setFooter(`**${member.guild.name}**`)
         .setTimestamp()
-
+        
+        await member.addRole(role.id)
+  
         channel.sendEmbed(embed);
 });
 
