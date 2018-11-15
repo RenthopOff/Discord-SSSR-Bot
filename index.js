@@ -119,7 +119,7 @@ bot.on('guildMemberAdd', member => {
 bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
     let channel = member.guild.channels.find('name', 'adminchat');
         if (!channel) return;
-    let embed = new Discord.RichEmbed()
+        let msgembed = new Discord.RichEmbed()
         .setAuthor('Сообщение изменено', newmsg.guild.iconURL)
         .addField('Отправитель', oldmsg.member, true)
         .addField('Канал', oldmsg.channel, true)
@@ -128,7 +128,7 @@ bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
         .setColor(0xe19517)
         .setTimestamp()
     
-       channel.sendEmbed(embed);
+       channel.sendEmbed(msgembed);
 })
 bot.on('guildMemberRemove', member => {
     let channel = member.guild.channels.find('name', 'welcome');
