@@ -116,8 +116,9 @@ bot.on('guildMemberAdd', member => {
     console.log(`${member}`, "has joined" + `${member.guild.name}`)
 
 });
-bot.on('messageUpdate', async (oldmsg, newmsg) => {
+bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
     let channel = member.guild.channels.find('name', 'adminchat');
+        if (!channel) return;
     let embed = new Discord.RichEmbed()
         .setAuthor('Сообщение изменено', newmsg.guild.iconURL)
         .addField('Отправитель', oldmsg.member, true)
@@ -279,7 +280,7 @@ bot.on("message", async message => {
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
-    let kickChannel = message.guild.channels.find(`name`, "⚙report-list");
+    let kickChannel = message.guild.channels.find(`name`, "📥ссылки");
     if(!kickChannel) return message.channel.send("Где канал?.");
 
     message.guild.member(kUser).kick(kReason);
