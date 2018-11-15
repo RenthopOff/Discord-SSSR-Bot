@@ -274,26 +274,19 @@ bot.on("message", async message => {
     kickChannel.send(kickEmbed);
   }
     if(cmd === `${prefix}help`){
-    let helpadembed = new Discord.RichEmbed()
-    .setDescription("**:gear:Меню Помощи Сервера:gear:**")
-    .setColor('RANDOM')
-    .addField("** *botinfo **", "Информация о боте🤖")
-    .addField("** *serverinfo **", "Информация о нашем сервере🏙")
-    .addField("** *playerinfo **", "Информация о игроке👨")
-    .addField("** *rwallpapaer **", "Получить рандомный фон📸")
-    .addField("** *coinflip **", "Поиграть в орла и решку🦅")
-    .addField("** *roulette **", "Поиграть в русскую рулетку🔫")
-    .addField("** *gay **", "Узнать на сколько ты гей🏳️‍:rainbow:")
-    .addField("** *ping **", "Узнать пинг бота и ваш🖥")
-    .addField("** *weed **", "Дать боту покурить🚬")
-    .addField("** *8BALL **", "Поиграть в волшебный мяч🎱")
-    .addField("** *kiss **", "Поцеловать кого-нибудь💏")
-    .addField("** *slap **", "Шлепнуть кого-нибудь🔞")
-    .addField("** *nsfw_help **", "Узнать nfsw команды бота🔞")
-    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
-    .setTimestamp();
+      let prefix = botconfig.prefix;
+      if (!message.content.startsWith(prefix)) return;
+      let bicon = bot.user.displayAvatarURL;
+      let botembed = new Discord.RichEmbed()
+          .setThumbnail(bicon)
+          .addField("Прифекс сервера", `*`)
+          .addField("Комнады для модерации", `**Ban :** выдать бан гражданину\n<prefix><ban> <гражданин> <причина>\n**Kick :** выгнать гражданина из государства\n<prefix><kick> <гражданин> <причина>\n**tmute :** заткнуть рот кому-то если бесит\n<prefix><tmute> <гражданин> <HH:mm:ss>\n**pole :** cоздать голосование на сервере\n<prefix><pole> <само голосование>`)
+          .addBlankField()
+          .addField("Основные комнады", `**Server Info :** получить информацию об сервере\n<prefix><serverinfo>\n**User Info : **получить ифнормацию об гражданине\n<prefix><playerinfo>\n**Bot Info :** получить информацию об боте\n<prefix><botinfo>\n** 8BALL :** поиграть с мячом предсказаний\n<prefix><8BALL><вопрос>\n** gay :** узнать на сколько ты гей?!\n<prefix><gay>\n** ping: ** узнать свой пинг и пинг бота\n<prefix><ping>\n** kiss: ** поцеловать кого-нибудь\n<kiss><гражданин>\n** slap: ** шлепнуть кого нибудь\n<slap><гражданин>`)
+          .setFooter(`Requested by : ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
+          .setColor('RANDOM');
 
-    return message.channel.send(helpadembed);
+    return message.channel.send(botembed);
     }
     if(cmd === `${prefix}nsfw_help`){
     let nsfwembed = new Discord.RichEmbed()
