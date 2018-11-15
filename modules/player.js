@@ -11,6 +11,7 @@ module.exports.run = async (bot, message, args) => {
   .setThumbnail(message.author.avatarURL)
   .addField("Полное Имя", message.author.tag, true)
   .addField("ID", message.author.id)
+  .addField("Когда зашел", message.member.joinedAt)
   .addField("Статус Гражданина:", user.presence.status, true)
   .addField("Сейчас играет:", `${user.presence.game ? user.presence.game.name: 'Просто в сети!'}`);
   
