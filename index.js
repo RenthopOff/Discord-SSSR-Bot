@@ -129,7 +129,8 @@ bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
         .setTimestamp()
     
        channel.sendEmbed(msgembed);
-})
+  
+});
 bot.on('guildMemberRemove', member => {
     let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
