@@ -116,19 +116,6 @@ bot.on('guildMemberAdd', member => {
     console.log(`${member}`, "has joined" + `${member.guild.name}`)
 
 });
-bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
-        let msgembed = new Discord.RichEmbed()
-        .setAuthor('Сообщение изменено', newmsg.guild.iconURL)
-        .addField('Отправитель', oldmsg.member, true)
-        .addField('Канал', oldmsg.channel, true)
-        .addField('Раньше', oldmsg.content)
-        .addField('Сейчас', newmsg.content)
-        .setColor(0xe19517)
-        .setTimestamp()
-    
-       channel.sendEmbed(msgembed);
-  
-});
 bot.on('guildMemberRemove', member => {
     let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
