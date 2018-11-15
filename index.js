@@ -206,7 +206,7 @@ bot.on("message", async message => {
     .addField('**Владелец**', message.guild.owner.user.tag, true)
     .addField('**ID**', message.guild.id, true)
     .addField('**Кол-во Каналов**', `${message.guild.channels.filter(channel => channel.type === 'voice').size} *голосовых*/ ${message.guild.channels.filter(channel => channel.type === 'text').size} *текстовых*`, true)
-    .addField("**Дата создания cервера**", "06.11.2017 17:43", true)
+    .addField("**Кол-во EMOJI**", message.guild.emojis.size, true)
     .addField("**Участников**", `${message.guild.members.filter(member => member.user.bot).size} *ботов* / ${message.guild.memberCount} *участников*`, true)
     .addField("**Регион**", message.guild.region, true)
     .addField("Cейчас в онлайне", online.size, true)
