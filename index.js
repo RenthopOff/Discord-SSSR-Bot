@@ -289,20 +289,6 @@ bot.on("message", async message => {
 
     return message.channel.send(botembed);
     }
-    if(cmd === `${prefix}nsfw_help`){
-    let nsfwembed = new Discord.RichEmbed()
-    .setDescription("**:gear:Меню Помощи NSFW:gear:**")
-    .setColor("#cca817")
-    .addField("** *feet **", "🔞")
-    .addField("** *cum **", "🔞")
-    .addField("** *pussy **", "🔞")
-    .addField("** *hentai **", "🔞")
-    .addField("** *boobs **", "🔞")
-    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
-    .setTimestamp();
-
-    return message.channel.send(nsfwembed);
-    }
   if(cmd === `${prefix}helpadmin`){
       if(!message.member.hasPermission("MANAGE_MESSAGE")){
               let moderembed = new Discord.RichEmbed()
