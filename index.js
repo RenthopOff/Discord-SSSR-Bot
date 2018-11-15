@@ -127,7 +127,8 @@ bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
         .addField('Сейчас', newmsg.content)
         .setColor(0xe19517)
         .setTimestamp()
-    await oldmsg.channel.send(embed)
+    
+       channel.sendEmbed(embed);
 })
 bot.on('guildMemberRemove', member => {
     let channel = member.guild.channels.find('name', 'welcome');
@@ -161,7 +162,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription("**Version bot 1.5**")
+    .setDescription("**Version bot 2.0**")
     .setColor("#7f4870")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
