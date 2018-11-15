@@ -92,7 +92,7 @@ if (channel.type != 'text') return;
 });
 bot.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome');
-    let role = member.guild.roles.find(r => r.name == '⚒️ Работяга ⚒️')
+    let role = member.guild.roles.find('name', '⚒️ Работяга ⚒️');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
@@ -106,7 +106,7 @@ bot.on('guildMemberAdd', member => {
         .setFooter(`**${member.guild.name}**`)
         .setTimestamp()
         
-        await member.addRole(role.id)
+        member.addRole(role)
   
         channel.sendEmbed(embed);
 });
