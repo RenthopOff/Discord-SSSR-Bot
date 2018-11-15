@@ -117,8 +117,6 @@ bot.on('guildMemberAdd', member => {
 
 });
 bot.on('messageUpdate', async (oldmsg, newmsg, member) => {
-    let channel = member.guild.channels.find('name', 'adminchat');
-        if (!channel) return;
         let msgembed = new Discord.RichEmbed()
         .setAuthor('Сообщение изменено', newmsg.guild.iconURL)
         .addField('Отправитель', oldmsg.member, true)
