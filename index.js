@@ -106,7 +106,7 @@ bot.on('guildMemberAdd', member => {
         .setFooter(`**${member.guild.name}**`)
         .setTimestamp()
         
-        member.addRole(role)
+        member.addRole(role);
   
         channel.sendEmbed(embed);
 });
