@@ -1,16 +1,14 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args, ops) => {
+	if(!message.member.hasPermission("ADMINISTRATOR")){
+		if (!message.member.roles.find("name", "@everyone")) {
+			message.channel.send('Недостаточно прав у вас.');
+			return;
+		}
+		
+    if (!args[0]) return message.channel.send('Proper usage: a.poll <вопрос>');
 
-	if (!message.member.roles.find("name", "@everyone")) { //Whatever role you want, I pick @everyone because everyone can use this command
-		message.channel.send('Недостаточно прав у вас.');
-		return;
-	}
-
-    // Check for input
-    if (!args[0]) return message.channel.send('Proper usage: a.poll <question>');
-
-    // Create Embed
     const embed = new Discord.RichEmbed()
         .setColor("#ffffff") //To change color do .setcolor("#fffff")
         .setFooter('Реакции для голосование')
