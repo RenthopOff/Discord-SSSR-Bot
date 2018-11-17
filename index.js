@@ -253,8 +253,8 @@ bot.on("message", async message => {
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Не могу найти пользователя!");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**НЕ МОГУ**!");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("*Он имеет привелегию выше твоей или он команда Администрации*!");
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("**Ошибка**!");
+    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("*Он имеет привелегию выше твоей или он команда Администрации*!");
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Выгнан из государства~")
@@ -267,7 +267,7 @@ bot.on("message", async message => {
     .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
     .setTimestamp();
 
-    let kickChannel = message.guild.channels.find(`name`, "📥ссылки");
+    let kickChannel = message.guild.channels.find(`name`, '📥ссылки');
     if(!kickChannel) return message.channel.send("Где канал?.");
 
     message.guild.member(kUser).kick(kReason);
@@ -290,9 +290,9 @@ bot.on("message", async message => {
     return message.channel.send(botembed);
     }
   if(cmd === `${prefix}helpadmin`){
-      if(!message.member.hasPermission("MANAGE_MESSAGE")){
+      if(!message.member.hasPermission("ADMINISTRATOR")){
               let moderembed = new Discord.RichEmbed()
-              .setDescription("**Меню помощи Администрации**")
+              .setDescription("_**Меню помощи Администрации**_")
               .setColor("#d53032")
               .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
               .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
