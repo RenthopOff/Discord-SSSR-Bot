@@ -9,12 +9,11 @@ module.exports.run = async (bot, message, args, ops) => {
 
 
     if (!args[0]) return message.channel.send('Proper usage: a.poll <question>');
-		if(!message.member.hasPermission("ADMINISTRATOR")){
     const embed = new Discord.RichEmbed()
         .setColor("#560319") 
         .setFooter('Реакции для голосавания')
         .setDescription(args.join(' '))
-        .setTitle(`Poll Created By ${message.author.username}`);
+        .setTitle(`Голосавние создал ${message.author.username}`);
 
     let msg = await message.channel.send(embed)
         .then(function (msg) {
