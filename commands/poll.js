@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args, ops) => {
     // Create Embed
     const embed = new Discord.RichEmbed()
         .setColor("#ffffff") //To change color do .setcolor("#fffff")
-        .setFooter('React to Vote.')
+        .setFooter('Реакции для голосование')
         .setDescription(args.join(' '))
         .setTitle(`Голосование создал: ${message.author.username}`);
 
