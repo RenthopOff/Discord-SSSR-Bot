@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args, ops) => {
 
 	if (!message.member.roles.find("name", "👑 Маршал Российской Федерации 👑")) {
-		message.channel.send('Invalid permissions.');
+		message.channel.send('У вас недостаточно прав');
 		return;
 	}
 
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args, ops) => {
         .then(function (msg) {
             msg.react("❎");
             msg.react("✅"); 
-            message.delete({timeout: 1000});
+            message.delete({timeout: 1500});
             }).catch(function(error) {
             console.log(error);
         });
