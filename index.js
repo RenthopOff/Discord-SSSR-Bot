@@ -282,7 +282,7 @@ bot.on("message", async message => {
           .addField("Прифекс сервера", `*`)
           .addField("Комнады для модерации", `**Ban :** выдать бан гражданину\n<prefix><ban> <гражданин> <причина>\n**Kick :** выгнать гражданина из государства\n<prefix><kick> <гражданин> <причина>\n**tmute :** заткнуть рот кому-то если бесит\n<prefix><tmute> <гражданин> <HH:mm:ss>\n**poll :** cоздать голосование на сервере\n<prefix><pole> <само голосование>`)
           .addBlankField()
-          .addField("Основные комнады", `**Server Info :** получить информацию об сервере\n<prefix><serverinfo>\n**User Info : **получить ифнормацию об гражданине\n<prefix><playerinfo>\n**Bot Info :** получить информацию об боте\n<prefix><botinfo>\n** 8BALL :** поиграть с мячом предсказаний\n<prefix><8BALL><вопрос>\n** gay :** узнать на сколько ты гей?!\n<prefix><gay>\n** ping: ** узнать свой пинг и пинг бота\n<prefix><ping>\n** kiss: ** поцеловать кого-нибудь\n<kiss><гражданин>\n** slap: ** шлепнуть кого нибудь\n<slap><гражданин>`)
+          .addField("Основные комнады", `**Server Info :** получить информацию об сервере\n<prefix><serverinfo>\n**User Info : **получить ифнормацию об гражданине\n<prefix><playerinfo>\n**Bot Info :** получить информацию об боте\n<prefix><botinfo>\n** 8BALL :** поиграть с мячом предсказаний\n<prefix><8BALL><вопрос>\n** gay :** узнать на сколько ты гей?!\n<prefix><gay>\n** ping: ** узнать свой пинг и пинг бота\n<prefix><ping>\n** kiss: ** поцеловать кого-нибудь\n<kiss><гражданин>\n** slap: ** шлепнуть кого нибудь\n<slap><гражданин>\n** roleinfo: ** узнать информацию об какой-ниюдуь роли./n<prefix><roleinfo><название роли>`)
           .addField("NSFW", `**boobs : ** получть немного хентайчика\n<prefix><boobs>\n**cum : ** получть немного хентайчика\n<prefix><cum>\n**feet :** получть немного хентайчика\n<prefix><feet>\n** hentai :** получть немного хентайчика\n<prefix><hentai>\n** pussy :** получть немного хентайчика\n<prefix><pussy>`)
           .setFooter(`Requested by : ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
           .setColor('RANDOM');
@@ -309,7 +309,6 @@ bot.on("message", async message => {
 bot.on("message", async message => {
   if(cooldown.has(message.author.id)){
     message.delete();
-    return message.reply("Жди 5 секунд!.");
   }
   if(!message.member.hasPermission("ADMINISTRATOR")){
     cooldown.add(message.author.id);
