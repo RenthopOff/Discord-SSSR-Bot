@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Забанен в", message.channel)
     .addField("Причина", bReason);
 
-    let incidentchannel = message.guild.channels.find(`name`, "incidents");
+    let incidentchannel = message.guild.channels.find(`name`, "📥ссылки");
     if(!incidentchannel) return message.channel.send("Не могу найти канал где это произошло.");
 
     message.guild.member(bUser).ban(bReason);
