@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     let year = message.guild.createdAt.getFullYear();
     if(!bUser) return message.channel.send("Не могу найти его!");
     let bReason = args.join(" ").slice(22);
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У него привилегия выше твоей!");
+    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("У него привилегия выше твоей!");
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
