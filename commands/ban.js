@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let day = message.guild.createdAt.getDate(): 
+    let day = message.guild.createdAt.getDate();
     let month = 1 + message.guild.createdAt.getMonth();
     let year = message.guild.createdAt.getFullYear();
     if(!bUser) return message.channel.send("Не могу найти его!");
