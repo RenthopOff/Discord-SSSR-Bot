@@ -17,11 +17,11 @@ module.exports.run = async (bot, message, args) => {
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
+    .setFooter(`Время бана • ${day}.${month}.${year}`)
     .setColor("#FF0000")
     .addField("Забанен", `${bUser} with ID ${bUser.id}`)
     .addField("Кем был выдан бан", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Забанен в", message.channel)
-    .setFooter(`Время бана • ${day}.${month}.${year}`)
     .addField("Причина", bReason);
 
     let incidentchannel = message.guild.channels.find(`name`, "incidents");
