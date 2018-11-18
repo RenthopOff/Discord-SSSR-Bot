@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Надо иметь права : **ADMINISTRATOR**");
     if(args[0] == "help"){
-      message.reply("Usage: !ban <user> <reason>");
+      message.reply("Usage: !ban <пользователь> <причина>");
       return;
     }
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
