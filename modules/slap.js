@@ -18,7 +18,7 @@ exports.run = (bot, message, args, tools) => {
     if (!message.mentions.users.first()) return message.channel.send(`Please mention someone!`).then(msg => {
         msg.delete(3000)
     });
-    message.channel.send(`<@${message.author.id}> шлепнул ${args[0]}`, {
+    message.channel.send(`<@${message.author.id}> шлепнул(a) ${args[0]}`, {
         embed: patEmb
     });
 
