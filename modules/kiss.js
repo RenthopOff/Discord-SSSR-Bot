@@ -18,7 +18,7 @@ exports.run = (bot, message, args, tools) => {
     if (!message.mentions.users.first()) return message.channel.send(`выбери кого-нибудь!`).then(msg => {
         msg.delete(3000)
     });
-    message.channel.send(`<@${message.author.id}> поцеловал ${args[0]}`, {
+    message.channel.send(`<@${message.author.id}> поцеловал(a) ${args[0]}`, {
         embed: patEmb
     });
 
