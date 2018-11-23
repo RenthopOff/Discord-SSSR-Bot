@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = async (client, message, args) => {
-    if (!message.guild.member(client.user).hasPermission("SEND_MESSAGES")) return message.author.send('I don\'t have permission to Send Messages. Please enable send messages for my role!');
+    if (!message.guild.member(client.user).hasPermission("SEND_MESSAGES")) return message.author.send('Упс...');
 
     let slots = ["🍎", "🍌", "🍒", "🍓", "🍈"];
     let result1 = Math.floor((Math.random() * slots.length));
@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'casino',
+    name: 'slots',
     description: 'Slot Machine',
     usage: 'slots'
-} 
+}
