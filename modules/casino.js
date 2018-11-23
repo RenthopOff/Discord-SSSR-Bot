@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'slots',
+    name: 'casino',
     description: 'Slot Machine',
     usage: 'slots'
 } 
