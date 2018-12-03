@@ -19,7 +19,6 @@ module.exports.run = async (bot, message, args, ops) => {
         .then(function (msg) {
             msg.react("❎");
             msg.react("✅"); 
-            message.delete({timeout: 1500});
             }).catch(function(error) {
             console.log(error);
         });
