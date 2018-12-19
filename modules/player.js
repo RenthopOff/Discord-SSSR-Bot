@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
   let date2 = new Date(argsUser.createdTimestamp)
   let date3 = new Date(message.guild.member(argsUser).joinedTimestamp)
 
-  let embed = new RichEmbed()
+  const embed = new Discord.RichEmbed()
   .setTitle(argsUser.username)
   .setDescription(game)
   .addField('Роли', message.guild.member(argsUser).roles.map(role => role.name).join(', ') || 'не имеет')
