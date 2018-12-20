@@ -1,22 +1,26 @@
-const Discord = requier("discord.js")
-exports.run = async(bot, message, args) =>
+const Discord = module.require('discord.js');
 
 
-let memberToUse = message.mentions.members.first() || message.author
+module.exports.run = async (bot, message, args) => {
 
-let playerembed = new Discord.RichEmbed()
-.setFooter('ID :', memberToUse.id)
-.setAuthor(memberToUse.user.tag, memberToUse.user.displayAvatar)
-.setThumbnail(memberToUse.user.displayAvatar)
-.addField('Статус', memberToUse.presence.status, true)
-.addField('Играет в: ', 'none', true)
-.addField('Роли', memberToUse.roles.map(r => `${r}`).join(' '))
-.setTimestamp();
+    let user = message.mentions.users.first() || message.author;
+    const joinDiscord = moment(user.createdAt).format('llll');
+    const joinServer = moment(user.joinedAt).format('llll');
+    let embed = new Discord.RichEmbed()
+        .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
+        .setDescription(`${user}`)
+        .setColor(`RANDOM`)
+        .setThumbnail(`${user.displayAvatarURL}`)
+        .addField('Status:', user.presence.status, true)
+        .addField('Roles:', user.roles.map(r => `${r}`).join(' | '), true)
+        .setFooter(`ID: ${user.id}`)
+        .setTimestamp();
 
-message.channel.send(playerembed);
-
+    message.channel.send({ embed: embed });
+    return;
 }
-exports.help = {
-  name: "playerinfo"
+
+module.exports.help = {
+    name: 'userinfo'
 }
 
