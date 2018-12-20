@@ -273,6 +273,19 @@ bot.on("message", async message => {
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
   }
+    if(cmd === `${prefix}playerinfo`){
+    let memberToUse = message.mentions.members.first() || message.author
+    let playerembed = new Discord.RichEmbed()
+    .setFooter('ID :', memberToUse.id)
+    .setAuthor(memberToUse.user.tag, memberToUse.user.displayAvatar)
+    .setThumbnail(memberToUse.user.displayAvatar)
+    .addField('Статус', memberToUse.presence.status, true)
+    .addField('Играет в: ', 'none', true)
+    .addField('Роли', memberToUse.roles.map(r => `${r}`).join(' '))
+    .setTimestamp();
+
+    message.channel.send(playerembed)
+  }
     if(cmd === `${prefix}help`){
       let prefix = botconfig.prefix;
       if (!message.content.startsWith(prefix)) return;
