@@ -10,7 +10,6 @@ module.exports.run = async (bot, message, args) => {
         .setColor(`RANDOM`)
         .setThumbnail(`${user.displayAvatarURL}`)
         .addField('Status:', user.presence.status, true)
-        .addField('Roles:', user.roles.map(r => `${r}`).join(' | '), true)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 
