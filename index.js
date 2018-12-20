@@ -249,20 +249,6 @@ bot.on("message", async message => {
     message.delete().catch(O_o=>{});
     reportschannel.send(reportEmbed);
   }
-    if(cmd === `${prefix}playerinfo`){
-    let user = message.mentions.members.first() || message.author;
-    let playerembed = new Discord.RichEmbed()
-    .setColor("#4bf442")
-    .setTitle(`${user.tag} Info`)
-    .setFooter(`ID: ${user.id}`)
-    .setTimestamp()
-    .setField("Имя: ", user.username)
-    .setField("ТЕГ: ", `#${user.discriminator}`)
-    .setField("Создал аккаунт : ", user.createdAt)
-    .setField("Статус: ", user.presence.status)
-    .setField("Играет в : ", `${user.presence.game ? user.presence.game.name: 'Просто чилит'}`)
-    message.channel.send(playerembed)
-    }
   if(cmd === `${prefix}kick`){
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Не могу найти пользователя!");
