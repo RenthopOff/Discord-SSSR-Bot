@@ -274,16 +274,17 @@ bot.on("message", async message => {
     kickChannel.send(kickEmbed);
   }
     if(cmd === `${prefix}playerinfo`){
-    let memberToUse = message.mentions.members.first() || message.author
+    let user = message.mentions.members.first() || message.author;
     let playerembed = new Discord.RichEmbed()
-    .setFooter('ID :', memberToUse.id)
-    .setAuthor(memberToUse.user.tag, memberToUse.user.displayAvatar)
-    .setThumbnail(memberToUse.user.displayAvatar)
-    .addField('Статус', memberToUse.presence.status, true)
-    .addField('Играет в: ', 'none', true)
-    .addField('Роли', memberToUse.roles.map(r => `${r}`).join(' '))
-    .setTimestamp();
-
+    .setColor("#4bf442")
+    .setTitle(`${user.tag} Info`)
+    .setFooter(`ID: ${user.id}`)
+    .setTimestamp()
+    .setField("Имя: ", user.username)
+    .setField("ТЕГ: ", `#${user.discriminator}`)
+    .setField("Создал аккаунт : ", user.createdAt)
+    .setField("Статус: ", user.presence.status)
+    .setField("Играет в : ", `${user.presence.game ? user.presence.game.name: 'Просто чилит'}`)
     message.channel.send(playerembed)
   }
     if(cmd === `${prefix}help`){
