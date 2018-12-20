@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor(`RANDOM`)
         .setThumbnail(`${user.displayAvatarURL}`)
         .addField('Cтатус:', user.presence.status, true)
-        .addField("ТЕГ", user.discrim, true)
+        .addField("ТЕГ", `#${user.discriminator}`, true)
         .addField("Играет в:", `${user.presence.game ? user.presence.game.name: "Тупо флексит"}`, true)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
