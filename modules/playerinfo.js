@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
         .setDescription(`${user}`)
-        .setColor(`#4bf442`)
+        .setColor(`#320b35`)
         .setThumbnail(`${user.displayAvatarURL}`)
         .addField('Cтатус:', user.presence.status, true)
     	.addField("Создал аккаунт:", `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
@@ -24,6 +24,6 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: 'userinfo'
+    name: 'playerinfo'
 }
 
