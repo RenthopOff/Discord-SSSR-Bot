@@ -9,7 +9,9 @@ module.exports.run = async (bot, message, args) => {
         .setDescription(`${user}`)
         .setColor(`RANDOM`)
         .setThumbnail(`${user.displayAvatarURL}`)
-        .addField('Status:', user.presence.status, true)
+        .addField('Cтатус:', user.presence.status, true)
+        .addField("ТЕГ", user.discrim, true)
+        .addField("Играет в:", user.presence.activity.game, true)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 
