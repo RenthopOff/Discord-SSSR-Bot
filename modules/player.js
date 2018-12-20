@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(`${user.displayAvatarURL}`)
         .addField('Cтатус:', user.presence.status, true)
         .addField("ТЕГ", user.discrim, true)
-        .addField("Играет в:", user.presence.activity.game, true)
+        .addField("Играет в:", `${user.presence.game ? user.presence.game.name: "Тупо флексит"}`), true)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 
