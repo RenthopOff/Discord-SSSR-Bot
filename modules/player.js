@@ -5,6 +5,7 @@ const moment = require('moment');
 module.exports.run = async (bot, message, args) => {
 
     let user = message.mentions.users.first() || message.author;
+    let member = message.guild.member(user);
     let embed = new Discord.RichEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
         .setDescription(`${user}`)
