@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
         .setDescription(`${user}`)
-        .setColor(`RANDOM`)
+        .setColor(`#4bf442`)
         .setThumbnail(`${user.displayAvatarURL}`)
         .addField('Cтатус:', user.presence.status, true)
         .addField("ТЕГ", `#${user.discriminator}`, true)
