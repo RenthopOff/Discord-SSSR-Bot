@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, ops) => {
 	}
 
 
-    if (!args[0]) return message.channel.send('Proper usage: a.poll <question>');
+    if (!args[0]) return message.channel.send('Prefix <poll> <само голосование>');
     const embed = new Discord.RichEmbed()
         .setColor("#560319") 
         .setFooter('Реакции для голосавания')
