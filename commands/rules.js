@@ -11,13 +11,13 @@ module.exports.run = async (bot, message, args, ops) => {
       const embed = new Discord.RichEmbed()
         .setColor("#560319") 
         .setFooter('Правила сервера')
-        .addBlankField()
         .addFiled("1.1 Запрещён спам, флуд, злоупотребление капсом в чате кроме")
-        .setTitle(`Голосавние создал ${message.author.username}`);
-        
-        return message.channel.send(embed);
-};
+        .setTimestamp();
+	
+        message.channel.send(embed);
+	
+}
 
 module.exports.help = {
     name: "rules"
-};
+}
