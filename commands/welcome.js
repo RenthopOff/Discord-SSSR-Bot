@@ -5,9 +5,8 @@ module.exports.run = async (bot, message, args) => {
   if(message.member.hasPermission("ADMINISTRATOR")) {
       let rulesembed = new Discord.RichEmbed()
       .setColor("#8000ff")
-      .setTitle("**Приветствуем тебя в нашем ламповом месте, где ты можешь отдохнуть и поиграть в игры или побеседовать с другими людьми.")
-      .setTitle("Первое дело пожалуйста прочти правила и потом можешь идти со спокойной душой развлекаться.");
-      
+      .setTitle("Привет мой новый друг,вижу ты решил к нам зайти?Ну мы всегда рады новым друзья.Прочитай правила и потом можешь идти развлекаться");
+
       message.channel.send(rulesembed)
     }
 
@@ -16,4 +15,5 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
   name:"wel"
 }
+
 
