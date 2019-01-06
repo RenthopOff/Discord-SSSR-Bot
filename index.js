@@ -6,6 +6,7 @@ const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
 const RichEmbed = require('discord.js');
 const moment = require('moment');
+const superagent = require('superagent');
 const fs = require('fs');
 const xp = require('./xp.json');
 const ytdl = require('ytdl-core');
