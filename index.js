@@ -275,8 +275,7 @@ bot.on("message", async message => {
       let bicon = bot.user.displayAvatarURL;
       let botembed = new Discord.RichEmbed()
           .setThumbnail(bicon)
-          .addField("Прифекс сервера [Prefix] ")
-          .addBlankField()
+          .addField("Все команды Communistic Bot", `Prefix Bot: >`)
           .addField("Основные комнады", `**Server Info :** получить информацию об сервере\n<prefix><serverinfo> \n**User Info : **получить ифнормацию об гражданине\n<prefix><playerinfo> \n**Bot Info :** получить информацию об боте\n<prefix><botinfo> \n** gay :** узнать на сколько ты гей?!\n<prefix><gay> \n** kiss: ** поцеловать кого-нибудь \n<prefix><kiss><гражданин> \n** slap: ** шлепнуть кого нибудь \n<slap><гражданин> \n** roleinfo: ** узнать информацию об какой-ниюдуь роли.\n<prefix><roleinfo><название роли> \n** bugtracker:** если вдруг вы нанши баг в нашем боте,то можете описать его нам и мы его пофиксим.За просто использования этой команды выдатся мут и затем бан! \n<prefix><bugtracker><описание бага> \n** reportplayer : ** пожаловаться на буйного игрока на сервере! \n<prefix><reportplayer<причина репорта на игрока>`)
           .addField("NSFW", `**boobs : ** получть немного хентайчика \n<prefix><boobs>\n**cum : ** получть немного хентайчика \n<prefix><cum> \n**feet :** получть немного хентайчика \n<prefix><feet> \n** hentai :** получть немного хентайчика\n<prefix><hentai> \n** pussy :** получть немного хентайчика \n<prefix><pussy> \n** randomhentai:** получть немного хентайчика \n<prefix><randomhentai> \n**solog:** получть немного хентайчика \n<prefix><solog> \n**wank:** получть немного хентайчика\n<prefix><wank>`)
           .setColor('#8000ff');
