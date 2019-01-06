@@ -77,11 +77,6 @@ fs.readdir("./modules/", (err, files) => {
     });
 
 });
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-
-  bot.user.setActivity("Use *help ", {type: "PLAYING"});
-});
 bot.on('channelCreate', async channel => {
 
   console.log(`${channel.name} был создан.`);
