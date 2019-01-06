@@ -280,7 +280,7 @@ bot.on("message", async message => {
       let bicon = bot.user.displayAvatarURL;
       let botembed = new Discord.RichEmbed()
           .setThumbnail(bicon)
-          .addField("Прифекс сервера[Prefix]", `*`)
+          .addField("Прифекс сервера[Prefix]", `>`)
           .addField("Комнады для модерации", `**Ban :** выдать бан гражданину\n<prefix><ban> <гражданин> <причина>\n**Kick :** выгнать гражданина из государства\n<prefix><kick> <гражданин> <причина>\n**tmute :** заткнуть рот кому-то если бесит\n<prefix><tmute> <гражданин> <HH:mm:ss>\n**poll :** cоздать голосование на сервере\n<prefix><pole> <само голосование>`)
           .addBlankField()
           .addField("Основные комнады", `**Server Info :** получить информацию об сервере\n<prefix><serverinfo>\n**User Info : **получить ифнормацию об гражданине\n<prefix><playerinfo>\n**Bot Info :** получить информацию об боте\n<prefix><botinfo>\n** 8BALL :** поиграть с мячом предсказаний\n<prefix><8BALL><вопрос>\n** gay :** узнать на сколько ты гей?!\n<prefix><gay>\n** ping: ** узнать свой пинг и пинг бота\n<prefix><ping>\n** kiss: ** поцеловать кого-нибудь\n<prefix><kiss><гражданин>\n** slap: ** шлепнуть кого нибудь\n<slap><гражданин>\n** roleinfo: ** узнать информацию об какой-ниюдуь роли.\n<prefix><roleinfo><название роли>\n** bugtracker:** если вдруг вы нанши баг в нашем боте,то можете описать его нам и мы его пофиксим.За просто использования этой команды выдатся мут до 4 дней\n<prefix><bugtracker><описание бага>\n** reportplayer : ** пожаловаться на буйного игрока на сервере!\n<prefix><reportplayer<причина репорта на игрока>`)
