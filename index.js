@@ -200,7 +200,7 @@ bot.on("message", async message => {
     let year = message.guild.createdAt.getFullYear()
     let serverembed = new Discord.RichEmbed()
     .setTitle("Информация")
-    .setColor("#ff6800")
+    .setColor("#8000ff")
     .setFooter(`Сервер был создан • ${day}.${month}.${year}`)
     .setTimestamp()
     .setThumbnail(message.guild.iconURL)
@@ -258,7 +258,7 @@ bot.on("message", async message => {
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Выгнан из государства~")
-    .setColor("#e56b00")
+    .setColor("#8000ff")
     .addField("*Кому выдали*", `${kUser} with ID ${kUser.id}`)
     .addField("*Кем был выдан*", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("*Где был*", message.channel)
@@ -284,8 +284,7 @@ bot.on("message", async message => {
           .addBlankField()
           .addField("Основные комнады", `**Server Info :** получить информацию об сервере\n<prefix><serverinfo>\n**User Info : **получить ифнормацию об гражданине\n<prefix><playerinfo>\n**Bot Info :** получить информацию об боте\n<prefix><botinfo>\n** 8BALL :** поиграть с мячом предсказаний\n<prefix><8BALL><вопрос>\n** gay :** узнать на сколько ты гей?!\n<prefix><gay>\n** ping: ** узнать свой пинг и пинг бота\n<prefix><ping>\n** kiss: ** поцеловать кого-нибудь\n<prefix><kiss><гражданин>\n** slap: ** шлепнуть кого нибудь\n<slap><гражданин>\n** roleinfo: ** узнать информацию об какой-ниюдуь роли.\n<prefix><roleinfo><название роли>\n** bugtracker:** если вдруг вы нанши баг в нашем боте,то можете описать его нам и мы его пофиксим.За просто использования этой команды выдатся мут до 4 дней\n<prefix><bugtracker><описание бага>\n** serverslist : ** узнать на каких серверах находится наш бот.\n<prefix><serverslist>`)
           .addField("NSFW", `**boobs : ** получть немного хентайчика\n<prefix><boobs>\n**cum : ** получть немного хентайчика\n<prefix><cum>\n**feet :** получть немного хентайчика\n<prefix><feet>\n** hentai :** получть немного хентайчика\n<prefix><hentai>\n** pussy :** получть немного хентайчика\n<prefix><pussy>\n** randomhentai:** получть немного хентайчика\n<prefix><randomhentai>\n**solog:** получть немного хентайчика\n<prefix><solog>\n**wank:** получть немного хентайчика\n<prefix><wank>`)
-          .setFooter(`Requested by : ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
-          .setColor('RANDOM');
+          .setColor('#8000ff');
 
     return message.channel.send(botembed);
     }
