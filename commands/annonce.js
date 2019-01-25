@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
       let rulesembed = new Discord.RichEmbed()
       .setColor("#8000ff")
       .addField("[**Нововведение в игре**]", `<@&538320686150713356> - новое в игре`)
-      .setImage("http://i.imgur.com/sYyH2IM.png")
+      .setImage("https://i.pinimg.com/originals/f3/62/06/f36206d27a5d40908bd1bc02ecca2b27.jpg")
       message.channel.send(rulesembed)
     }
 
