@@ -1,5 +1,5 @@
 module.exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('Недостаточно пра вна использование команды!')
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('Недостаточно пра вна использование команды!')
 
     let msgid = args[0]
     let content = args.slice(1).join(' ')
