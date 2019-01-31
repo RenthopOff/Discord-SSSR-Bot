@@ -223,6 +223,8 @@ bot.on("message", async message => {
       return;
     }
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("**Ошибка**!");
+    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("*Он имеет привелегию выше твоей или он команда Администрации*!");
     if(!rUser) return message.channel.send("Не могу найти пользователя.");
     let rreason = args.join(" ").slice(22);
 
