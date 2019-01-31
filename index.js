@@ -300,18 +300,5 @@ bot.on("message", async message => {
       }
   }
 });
-bot.on("message", async message => {
-  if(cooldown.has(message.author.id)){
-    message.delete();
-  }
-  if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
-    message.delete();
-
-    setTimeout(() => {
-      cooldown.delete(message.author.id)
-    }, cdseconds * 1000)
-  }
-});
 
 bot.login(process.env.BOT_TOKEN);
