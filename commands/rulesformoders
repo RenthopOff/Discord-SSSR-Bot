@@ -1,0 +1,16 @@
+const Discord = require("discord.js");
+
+module.exports.run = async (bot, message, args) => {
+
+  if(message.member.hasPermission("ADMINISTRATOR")) {
+      let rulesembed = new Discord.RichEmbed()
+      .setColor("#8000ff")
+      .addField("[ ** Запрещено ** ]", `1.1 Смена ника у бота/игроков\n 1.2 Бан/Кик без причины\n 1.3 Перенос игроков/ботов в другие комната на сервере без веской причины\n 1.4 Выключать микрофон/наушники у игроков без веской причины\n 1.5 Cоздание текстовых/голосовых без ведома создателя сервера\n 1.6 Просто так выдавать роли просто так`)
+      message.channel.send(rulesembed)
+    }
+
+}
+
+module.exports.help = {
+  name:"rules1"
+}
