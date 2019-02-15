@@ -171,39 +171,6 @@ bot.on("message", async message => {
 
     return message.channel.send(botembed);
   }
-  
-    if (cmd === `${prefix}weed`) {
-    return message.channel.send("**Начал курить!**").then(async msg => {
-        setTimeout(() => {
-            msg.edit('🚬');
-        }, 500);
-        setTimeout(() => {
-            msg.edit('🚬 ☁ ');
-        }, 700);
-        setTimeout(() => {
-            msg.edit('🚬 ☁☁ ');
-        }, 900);
-        setTimeout(() => {
-            msg.edit('🚬 ☁☁☁ ');
-        }, 1000);
-        setTimeout(() => {
-            msg.edit('🚬 ☁☁☁');
-        }, 1100);
-        setTimeout(() => {
-            msg.edit('🚬 ☁☁');
-        }, 1200);
-        setTimeout(() => {
-            msg.edit('🚬 ☁');
-        }, 1300);
-        setTimeout(() => {
-            msg.edit(`**Закончил курить!**`);
-        }, 1500);
-        setTimeout(() => {
-            msg.delete(`**Закончил курить!**`);
-        }, 6000);
-      });
-    }
-
   if(cmd === `${prefix}serverinfo`){
     const verificationLevel = message.guild.verificationLevel;
     const verificationLevels = ['Отсутствует', 'Легкий', 'Средний', 'Высокий', 'Высочайший']
@@ -230,41 +197,6 @@ bot.on("message", async message => {
     .addField("**Кол-во Ролей**", message.guild.roles.size, true);
     return message.channel.send(serverembed);
   }
-
-  if(cmd === `${prefix}report`){
-    let red = botconfig.red;
-    let green = botconfig.green;
-    let orange = botconfig.orange;
-
-    if(args[0] == "help"){
-      message.reply("Usage: !report <user> <reason>");
-      return;
-    }
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("**Ошибка**!");
-    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("*Он имеет привелегию выше твоей или он команда Администрации*!");
-    if(!rUser) return message.channel.send("Не могу найти пользователя.");
-    let rreason = args.join(" ").slice(22);
-
-    let reportEmbed = new Discord.RichEmbed()
-    .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
-    .setTimestamp()
-    .setDescription("Reports")
-    .setColor(orange)
-    .addField("Репорт на", `${rUser} with ID: ${rUser.id}`)
-    .addField("Кем выдан", `${message.author}`)
-    .setThumbnail(message.author.displayAvatarURL)
-    .addField("Канал", message.channel)
-    .addField("Время", message.createdAt)
-    .addField("Причина", rreason);
-
-    let reportschannel = message.guild.channels.find(`name`, "📥доносы");
-    if(!reportschannel) return message.channel.send("Где канал для репорт,а сучка?!");
-
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);
-  }
   if(cmd === `${prefix}kick`){
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Не могу найти пользователя!");
@@ -284,7 +216,7 @@ bot.on("message", async message => {
     .setTimestamp();
 
     let kickChannel = message.guild.channels.find(`name`, '📥ссылки');
-    if(!kickChannel) return message.channel.send("Где канал?.");
+    if(!kickChannel) return message.channel.send("Где канал?");
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
