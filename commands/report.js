@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     if (!member)
         return message.reply("Укажи нарушителя.");
     let reason = args.slice(1).join(' ');
-    if (!reason) reason = "Причину укажи!";
+    if (!reason) reason = "Отсуствие причины является нарушением! Пиши Главе Аднимистрации через >reportplayer!";
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(message.author.avatarURL)
