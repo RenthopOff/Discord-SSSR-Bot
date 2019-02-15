@@ -9,15 +9,15 @@ exports.run = async (client, message, args) => {
     const b = message.guild.roles.get('495605551774826519'); // Administrator
     const c = message.guild.roles.get('495199722458316825'); // Developer
 
-    const filter = (reaction, user) => ['🇦', '🇧', '🇨'].includes(reaction.emoji.name) && user.id === message.author.id;
+    const filter = (reaction, user) => ['⚔', '⚙', '🔧'].includes(reaction.emoji.name) && user.id === message.author.id;
 
     const embed = new RichEmbed()
         .setTitle('Avaiilable Roles')
         .setDescription(`
         
-        🇦 ${a.toString()}
-        🇧 ${b.toString()}
-        🇨 ${c.toString()}
+        ⚔ ${a.toString()}
+        ⚙ ${b.toString()}
+        🔧 ${c.toString()}
         `)
         .setColor(0xdd9323)
         .setFooter(`ID: ${message.author.id}`);
