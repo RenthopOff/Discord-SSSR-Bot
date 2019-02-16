@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Надо иметь права : **ADMINISTRATOR**");
     var canal = message.guild.channels.find('name', '📥доносы');
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member)
