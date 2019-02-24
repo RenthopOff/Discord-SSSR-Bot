@@ -116,7 +116,6 @@ bot.on('guildMemberAdd', member => {
         .addField(':id:', "**[" + `${member.id}` + "]**")
         .addField(':family_mwgb: | Теперь ты житель нашего государства', '*Будь как дома*')
         .addField("Имя", `<@` + `${member.id}` + `>`, true)
-        .addField('Сервер', `${member.guild.name}`, true )
         .setFooter(`**${member.guild.name}**`)
         .setTimestamp()
         
@@ -137,9 +136,9 @@ bot.on('guildMemberRemove', member => {
         let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
-        .addField('Name:', `${member}`)
-        .addField('Покинул наши замечательные земли!', ':weary:')
-        .addField('Сейчас на сервере осталось', `${member.guild.memberCount}` + " учатсники")
+        .addField('Имя:', `${member}`)
+        .addField('Покинул наше государство и походу на всегда!', ':weary:')
+        .addField('Сейчас на сервере осталось', `${member.guild.memberCount}` + " учатсников")
         .setFooter(`**${member.guild.name}`)
         .setTimestamp()
 
