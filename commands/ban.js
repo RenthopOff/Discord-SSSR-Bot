@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
     let banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
     .setFooter(`Время бана • ${day}.${month}.${year}`)
-    .setColor("#FF0000")
+    .setColor("#8000ff")
     .addField("Забанен", `${bUser} с ID ${bUser.id}`)
     .addField("Кем был выдан бан", `<@${message.author.id}>`)
     .addField("Забанен в", message.channel)
