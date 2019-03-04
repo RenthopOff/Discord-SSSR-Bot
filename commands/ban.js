@@ -23,8 +23,8 @@ module.exports.run = async (bot, message, args) => {
     .setDescription("~Ban~")
     .setFooter(`Время бана • ${day}.${month}.${year}`)
     .setColor("#FF0000")
-    .addField("Забанен", `${bUser} with ID ${bUser.id}`)
-    .addField("Кем был выдан бан", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Забанен", `${bUser} с ID ${bUser.id}`)
+    .addField("Кем был выдан бан", `<@${message.author.id}>`)
     .addField("Забанен в", message.channel)
     .addField("Причина", bReason)
     .setImage(replies[result]);
