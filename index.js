@@ -8,7 +8,6 @@ const RichEmbed = require('discord.js');
 const moment = require('moment');
 const superagent = require('superagent');
 const fs = require('fs');
-const ffmpeg = require('ffmpeg');
 const xp = require('./xp.json');
 const ytdl = require('ytdl-core');
 const bot = new Discord.Client();
