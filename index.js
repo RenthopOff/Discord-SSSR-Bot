@@ -97,7 +97,7 @@ fs.readdir("./modules/", (err, files) => {
 });
 bot.on('ready', () => {
     console.log(`${bot.user.username} online`);
-    bot.user.setPresence({status: 'dnd', game:{name: 'test', type: 0}})
+    bot.user.setPresence({status: 'dnd', game:{name: 'My version is 2.5', type: 0}})
 });
 bot.on('channelCreate', async channel => {
 
