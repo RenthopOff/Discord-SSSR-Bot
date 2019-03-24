@@ -1,4 +1,5 @@
 const ytdl = require('ytdl-core')
+const ffmpeg = require('ffmpeg')
 const queue = new Map()
 
 module.exports.run = async (bot, message, args) => {
