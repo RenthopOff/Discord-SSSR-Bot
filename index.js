@@ -236,22 +236,6 @@ bot.on("message", async message => {
 
     return message.channel.send(botembed);
     }
-  if(cmd === `${prefix}helpadmin`){
-      if(!message.member.hasPermission("ADMINISTRATOR")){
-              let moderembed = new Discord.RichEmbed()
-              .setDescription("_**Меню помощи Администрации**_")
-              .setColor("#d53032")
-              .addField("** *report **", "Выдать репорт гражданину ИМЯ / ПРИЧИНА")
-              .addField("** *ban **", "Выдать бан гражданину ИМЯ / ПРИЧИНА")
-              .addField("** *clear **", "Очистка чата до 50 сообщений");
-        try{
-          await message.author.send(moderembed);
-          }catch(e){
-            message.reply("**Ты не админ что бы получать этот список команд!**");
-          }
-        return message.channel.send(moderembed);
-      }
-  }
 });
 
 bot.login(process.env.BOT_TOKEN);
