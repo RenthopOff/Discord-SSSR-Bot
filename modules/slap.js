@@ -15,7 +15,7 @@ exports.run = (bot, message, args, tools) => {
         return;
     }
 
-    if (!message.mentions.users.first()) return message.channel.send(`Please mention someone!`).then(msg => {
+    if (!message.mentions.users.first()) return message.channel.send(`Ты не выбрал пользователя!`).then(msg => {
         msg.delete(3000)
     });
     message.channel.send(`<@${message.author.id}> шлепнул(a) ${args[0]}`, {
