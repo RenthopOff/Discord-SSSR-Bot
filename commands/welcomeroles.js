@@ -19,6 +19,7 @@ exports.run = async (bot, message, args) => {
         .setDescription(`
        
         Welcome to **${message.guild.name}**! You may choose from our list of roles you can join/leave from:
+
        🇦 ${a.toString()}
        🇧 ${b.toString()}
        🇨 ${c.toString()}
