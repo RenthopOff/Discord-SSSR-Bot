@@ -23,6 +23,7 @@ exports.run = async (bot, message, args) => {
        🇦 ${a.toString()}
        🇧 ${b.toString()}
        🇨 ${c.toString()}
+
        `)
         .setColor(0xdd9323)
         .setFooter(`Guild ID: ${message.guild.id}`);
