@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args, ops) => {
 
 	if (!message.member.roles.find("name", "👑 Маршал Российской Федерации 👑")) {
-		message.channel.send('У вас недостаточно прав');
+		message.channel.send('У вас недостаточно прав для использовния команды.');
 		return;
 	}
 
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args, ops) => {
         .setColor("#8000ff") 
         .setFooter('Реакции для голосавания')
         .setDescription(args.join(' '))
-        .setTitle(`Голосавние создал ${message.author.username}`);
+        .setTitle(`Голосавние создал: ${message.author.username}`);
 
     let msg = await message.channel.send(embed)
         .then(function (msg) {
