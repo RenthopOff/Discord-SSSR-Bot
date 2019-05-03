@@ -10,7 +10,7 @@ exports.run = (bot, message, args, tools) => {
         .setColor(0xA901DB)
         .setImage(randomImage);
     if (!args[0]) {
-        message.channel.send(`<@${message.author.id}> выбери кого-нибудь что бы поцеловать`, {
+        message.channel.send(`<@${message.author.id}> выбери кого-нибудь что бы поцеловать.Мррр...`, {
         });
         return;
     }
