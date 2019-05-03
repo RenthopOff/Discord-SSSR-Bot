@@ -186,8 +186,8 @@ bot.on("message", async message => {
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Не могу найти пользователя!");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("**Ошибка**!");
-    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("*Он имеет привелегию выше твоей или он команда Администрации*!");
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Недостаточно прав на использование команды!");
+    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("*Он имеет привелегию выше твоей или он/она в команде Администрации*!");
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Выгнан из государства~")
