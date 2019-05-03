@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Нит.");
     var canal = message.guild.channels.find('name', 'adminchat');
     let reason = args.slice(0).join(' ');
     if (!reason)
