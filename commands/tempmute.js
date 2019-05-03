@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
   if(!mutetime) return message.reply("Поставь время!");
 
   await(tomute.addRole(muterole.id));
-  message.reply(`<@${tomute.id}> был выдан мут на: ${ms(ms(mutetime))}`);
+  message.reply(`<@${tomute.id}> был выдан мут на: ${ms(ms(mutetime))},и тепреь ты не можешь писать и говорить определенное время.`);
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
