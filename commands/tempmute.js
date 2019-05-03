@@ -20,7 +20,6 @@ module.exports.run = async (bot, message, args) => {
       message.guild.channels.forEach(async (channel, id) => {
         await channel.overwritePermissions(muterole, {
           SEND_MESSAGES: false,
-          CONNECT: false,
           SPEAK: false,
           ADD_REACTIONS: false
         });
