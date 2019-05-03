@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops) => {
 
     if (!args[0]) return message.channel.send('Prefix <poll> <само голосование>');
     const embed = new Discord.RichEmbed()
-        .setColor("#560319") 
+        .setColor("#8000ff") 
         .setFooter('Реакции для голосавания')
         .setDescription(args.join(' '))
         .setTitle(`Голосавние создал ${message.author.username}`);
