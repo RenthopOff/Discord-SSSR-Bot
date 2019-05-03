@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
 
   //!tempmute @user 1s/m/h/d
-
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Упс..");
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Пользователь не найден");
   if(tomute.hasPermission("ADMINISTRATOR")) return message.reply("Не могу его трогать!");
