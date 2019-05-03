@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
   //!addrole @andrew Dog Person
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Нит.");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Недостаточно прав на использование команды!");
   if(args[0] == "help"){
     message.reply("Usage: !addrole <имя> <роль>");
     return;
