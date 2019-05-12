@@ -92,7 +92,7 @@ if (channel.type != 'text') return;
 });
 bot.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', '👋welcome');
-    let role = member.guild.roles.find('name', '👨 Иммигрант 👨');
+    let role = member.guild.roles.find('name', 'Иммигрант');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
