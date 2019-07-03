@@ -79,7 +79,7 @@ fs.readdir("./modules/", (err, files) => {
 });
 bot.on('ready', () => {
     console.log(`${bot.user.username} online`);
-    bot.user.setPresence({status: 'online', game:{name: 'My version is 3.0', type: 0}})
+    bot.user.setPresence({status: 'online', game:{name: 'My version is 3.1', type: 0}})
 });
 bot.on('channelCreate', async channel => {
 
@@ -123,7 +123,7 @@ bot.on('guildMemberRemove', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField('Имя:', `${member}`)
-        .addField('Покинул наш сервер
+        .addField('Покинул наш сервер')
         .addField('Сейчас на сервере осталось', `${member.guild.memberCount}` + " учатсников")
         .setFooter(`${member.guild.name}`)
         .setTimestamp()
