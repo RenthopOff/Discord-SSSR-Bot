@@ -102,7 +102,7 @@ bot.on('guildMemberAdd', member => {
         .addField(':id:', "**[" + `${member.id}` + "]**")
         .addField(':family_mwgb: | Теперь ты житель нашего государства', '*Будь как дома*')
         .addField("Имя", `<@` + `${member.id}` + `>`, true)
-        .setFooter(`**${member.guild.name}**`)
+        .setFooter(`${member.guild.name}**`)
         .setTimestamp()
         
         member.addRole(role);
@@ -123,9 +123,9 @@ bot.on('guildMemberRemove', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField('Имя:', `${member}`)
-        .addField('Покинул наше государство и походу на всегда!', ':weary:')
+        .addField('Покинул наш сервер
         .addField('Сейчас на сервере осталось', `${member.guild.memberCount}` + " учатсников")
-        .setFooter(`**${member.guild.name}`)
+        .setFooter(`${member.guild.name}`)
         .setTimestamp()
 
         channel.sendEmbed(embed);
@@ -147,7 +147,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription("**Version bot 3.0**")
+    .setDescription("**Version bot 3.1*")
     .setColor("#7f4870")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
