@@ -79,7 +79,7 @@ fs.readdir("./modules/", (err, files) => {
 });
 bot.on('ready', () => {
     console.log(`${bot.user.username} online`);
-    bot.user.setPresence({status: 'online', game:{name: 'My version is 3.1', type: 0}})
+    bot.user.setPresence({status: 'watching', game:{name: 'My version is 3.2', type: 0}})
 });
 bot.on('channelCreate', async channel => {
 
