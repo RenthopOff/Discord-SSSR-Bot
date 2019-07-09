@@ -101,7 +101,7 @@ bot.on('guildMemberAdd', member => {
         .addField(':bust_in_silhouette: | Имя : ', `${member}`)
         .addField(':family_mwgb: | Теперь ты ты с нами')
         .addField(`1`)
-        .setTimestamp()
+        .setTimestamp();
         
         member.addRole(role);
   
@@ -122,7 +122,7 @@ bot.on('guildMemberRemove', member => {
         .addField('Имя:', `${member}`)
         .addField(`1`)
         .addField('Покинул наш сервер')
-        .setTimestamp()
+        .setTimestamp();
 
         channel.sendEmbed(embed);
 });
