@@ -99,8 +99,6 @@ bot.on('guildMemberAdd', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField(':bust_in_silhouette: | Имя : ', `${member}`)
-        .addField(':family_mwgb: | Теперь ты ты с нами')
-        .addField(`1`)
         .setTimestamp();
         
         member.addRole(role);
@@ -120,8 +118,6 @@ bot.on('guildMemberRemove', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField('Имя:', `${member}`)
-        .addField(`1`)
-        .addField('Покинул наш сервер')
         .setTimestamp();
 
         channel.sendEmbed(embed);
