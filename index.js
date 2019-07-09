@@ -81,6 +81,18 @@ bot.on('ready', () => {
     console.log(`${bot.user.username} online`);
     bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 3.2', type: 0}})
 });
+bot.on("ready", () => {
+	// первый попавшийся канал от метода channels.first() вернул голосовой
+	// Давай лучше подключимся к нужному нам каналу напрямую!?
+  bot.guilds.first().channels.get("553491463669940235").send("Hello World!");
+  
+  // client.guilds.find(i => i.id > 0)
+  bot.channels.get("553491463669940235").send(`Нажми на эмодзи, чтобы получить/убрать роль!`)
+    .then((message) => {
+      message.react("1⃣");
+      messageId = message.id;
+    });
+});
 bot.on('channelCreate', async channel => {
 
   console.log(`${channel.name} был создан.`);
@@ -106,6 +118,30 @@ bot.on('guildMemberAdd', member => {
         member.addRole(role);
   
         channel.sendEmbed(embed);
+});
+bot.on('raw', async event => {
+  if (!events.hasOwnProperty(event.t)) return;
+  const { d: data } = event;
+  const user = bot.users.get(data.user_id);
+  const channel = bot.channels.get(data.channel_id) || await user.createDM();
+  if (channel.messages.has(data.message_id)) return;
+  const message = await channel.fetchMessage(data.message_id);
+  const emojiKey = (data.emoji.id) ? `${data.emoji.name}:${data.emoji.id}` : data.emoji.name;
+  const reaction = message.reactions.get(emojiKey);
+  bot.emit(events[event.t], reaction, user);
+});
+
+bot.on('messageReactionAdd', (reaction, user) => {
+  let member = bot.guilds.first().members.find(x => x.id == user.id);
+  if (member.roles.some(r => ["Вип"].includes(r.name))) {
+    if (reaction.message.id == messageId) {
+      if (reaction.emoji.name === "1⃣") {
+        let role = bot.guilds.first().roles.find(x => x.name === "Цвет");
+        member.addRole(role)
+			.catch((e)=>{});
+      }      
+    }
+  }  
 });
 
 bot.on('guildMemberAdd', member => {
