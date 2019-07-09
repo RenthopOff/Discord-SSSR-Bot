@@ -100,6 +100,7 @@ bot.on('guildMemberAdd', member => {
         .setThumbnail(memberavatar)
         .addField(':bust_in_silhouette: | Имя : ', `${member}`)
         .addField(':family_mwgb: | Теперь ты ты с нами')
+        .addField(`1`)
         .setTimestamp()
         
         member.addRole(role);
