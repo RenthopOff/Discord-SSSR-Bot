@@ -120,6 +120,7 @@ bot.on('guildMemberRemove', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField('Имя:', `${member}`)
+        .addField(`1`)
         .addField('Покинул наш сервер')
         .setTimestamp()
 
