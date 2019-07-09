@@ -99,9 +99,7 @@ bot.on('guildMemberAdd', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField(':bust_in_silhouette: | Имя : ', `${member}`)
-        .addField(':id:', "**[" + `${member.id}` + "]**")
-        .addField(':family_mwgb: | Теперь ты житель нашего государства', '*Будь как дома*')
-        .addField("Имя", `<@` + `${member.id}` + `>`, true)
+        .addField(':family_mwgb: | Теперь ты ты с нами')
         .setFooter(`${member.guild.name}**`)
         .setTimestamp()
         
@@ -124,8 +122,6 @@ bot.on('guildMemberRemove', member => {
         .setThumbnail(memberavatar)
         .addField('Имя:', `${member}`)
         .addField('Покинул наш сервер')
-        .addField('Сейчас на сервере осталось', `${member.guild.memberCount}` + " учатсников")
-        .setFooter(`${member.guild.name}`)
         .setTimestamp()
 
         channel.sendEmbed(embed);
