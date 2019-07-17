@@ -98,7 +98,7 @@ bot.on('guildMemberAdd', member => {
         let embed = new Discord.RichEmbed()
         .setColor("#d71868")
         .setTitle(`*Welcome message*`)
-        .setDescription(`Приветствую тебя ${member} в ⭐ S S S R ⭐.\n\n Будь как дома`)
+        .setDescription(`Приветствую тебя ${member} в ⭐ S S S R ⭐.\n\n *Будь как дома💗*`)
         .setThumbnail(memberavatar)
         .setTimestamp();
         
@@ -118,7 +118,7 @@ bot.on('guildMemberRemove', member => {
         let embed = new Discord.RichEmbed()
         .setColor("#d71868")
         .setTitle(`*Leave message*`)
-        .setDescription(`Вышел ${member} из ⭐ S S S R ⭐.\n\n **Пока пока**`)
+        .setDescription(`Вышел ${member} из ⭐ S S S R ⭐.\n\n *Пока пока😫*`)
         .setThumbnail(memberavatar)
         .setTimestamp();
 
