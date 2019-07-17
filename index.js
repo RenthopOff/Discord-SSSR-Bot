@@ -96,7 +96,7 @@ bot.on('guildMemberAdd', member => {
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
-        .setColor(#7f4870)
+        .setColor("#7f4870")
         .setTitle(`*Welcome message*`)
         .setDescription(`Приветствую тебя ${member} в ⭐ S S S R ⭐.\n\n Будь как дома`)
         .setThumbnail(memberavatar)
@@ -116,7 +116,7 @@ bot.on('guildMemberRemove', member => {
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
-        .setColor(#7f4870)
+        .setColor("#7f4870")
         .setTitle(`*Leave message*`)
         .setDescription(`Вышел ${member} из ⭐ S S S R ⭐.\n\n **Пока пока**`)
         .setThumbnail(memberavatar)
