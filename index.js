@@ -79,7 +79,7 @@ fs.readdir("./modules/", (err, files) => {
 });
 bot.on('ready', () => {
     console.log(`${bot.user.username} online`);
-    bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 3.2', type: 0}})
+    bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 3.3', type: 0}})
 });
 bot.on('channelCreate', async channel => {
 
@@ -96,10 +96,10 @@ bot.on('guildMemberAdd', member => {
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
+        .setColor(0xfffff)
+        .setTitle(`*Welcome message*`)
+        .setDescription(`Приветствую тебя {member.user} в ⭐ S S S R ⭐.\n\n Будь как дома`)
         .setThumbnail(memberavatar)
-        .addField(':bust_in_silhouette: | Имя : ', `${member}`)
-        .addField('Теперь он(а) с нами!')
         .setTimestamp();
         
         member.addRole(role);
