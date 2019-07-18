@@ -131,15 +131,11 @@ bot.on("message", async message => {
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
-  let uid = message.author.id;
-  if(!database[uid]){
-    database[uid] ={
-      coins:10,
-      warns:0,
-      xp:0,
-      lvl:0
+  if(!database[message.author.id]){
+    database[message.author.id] = {
+      warns: 0
     };
-  };
+  }
   fs.writeFile('./database.json',JSON.stringify(database),(err)=>{
     if(err) console.log(err);
   });
