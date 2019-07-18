@@ -131,6 +131,15 @@ bot.on("message", async message => {
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
+  let uid = message.author.id;
+  if(!profile[uid]){
+    profile[uid] ={
+      coins:10,
+      warns:0,
+      xp:0,
+      lvl:0
+    };
+  };
   let args = messageArray.slice(1);
   let sender = message.author;
   let msg = message.content.toUpperCase();
