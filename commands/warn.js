@@ -7,12 +7,15 @@ module.exports.run = async (bot,message,args) => {
     var canal = message.guild.channels.find('name', '📥доносы')
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("У вас нет прав");
     let rUser = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!args[0]) return send("Вы не указали пользователя");
-    if(!rUser) return send("Пользователь не найден");
-    if(!profile[rUser.id])return send("Пользователя нету в базе данных");
+        
+    if(!args[0]) return message("Вы не указали пользователя");
+    if(!rUser) return message("Пользователь не найден");
+    if(!profile[rUser.id])return message("Пользователя нету в базе данных");
+        
     profile[rUser.id].warns++;
     fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
+        
     });
     if(profile[rUser.id].warns >=3){
         message.guild.member(rUser).kick("3/3 Предупреждений");
