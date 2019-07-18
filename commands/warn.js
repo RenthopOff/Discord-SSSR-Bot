@@ -13,7 +13,7 @@ module.exports.run = async (bot,message,args) => {
     if(!profile[rUser.id])return message.channel.send("Пользователя нету в базе данных");
         
     profile[rUser.id].warns++;
-    fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
+    fs.writeFile('../database.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
         
     });
