@@ -9,6 +9,7 @@ const moment = require('moment');
 const superagent = require('superagent');
 const fs = require('fs');
 const ytdl = require('ytdl-core');
+const db = require('quick.db');
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.modules - new Discord.Collection();
