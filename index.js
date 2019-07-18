@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
 const Languages = require('./Languages.json');
-const profile = require("./users.json");
+const profile = require("./database.json");
 const ms = require("ms");
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
@@ -132,18 +132,18 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let uid = message.author.id;
-  if(!profile[uid]){
-    profile[uid] ={
+  if(!database[uid]){
+    database[uid] ={
       coins:10,
       warns:0,
       xp:0,
       lvl:0
     };
   };
-  fs.writeFile('./users.json',JSON.stringify(users),(err)=>{
+  fs.writeFile('./users.json',JSON.stringify(database),(err)=>{
     if(err) console.log(err);
   });
-  let u = profile[uid];
+  let u = database[uid];
   u.coins++;
   u.xp++;
   if(u.xp>= (u.lvl * 5)){
