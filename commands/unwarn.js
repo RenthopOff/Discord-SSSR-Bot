@@ -11,7 +11,7 @@ module.exports.run = async (bot,message,args) => {
     if(!profile[rUser.id])return message.guild.channels.find("Пользователя нету в profile.json");
     if(profile[rUser.id]<=0) return message.guild.channels.find("У пользователя 0 предупреждений");
     profile[rUser.id].warns--;
-    fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
+    fs.writeFile('../database.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
     });
     let embed = new Discord.RichEmbed()
