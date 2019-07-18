@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
 const Languages = require('./Languages.json');
+const profile = require("./profile.json");
 const ms = require("ms");
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
