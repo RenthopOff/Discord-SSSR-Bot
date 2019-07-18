@@ -139,13 +139,6 @@ bot.on("message", async message => {
   fs.writeFile('./database.json',JSON.stringify(database),(err)=>{
     if(err) console.log(err);
   });
-  let u = database[uid];
-  u.coins++;
-  u.xp++;
-  if(u.xp>= (u.lvl * 5)){
-    u.xp = 0;
-    u.lvl +=1;
-  }
   let args = messageArray.slice(1);
   let sender = message.author;
   let msg = message.content.toUpperCase();
