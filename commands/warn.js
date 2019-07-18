@@ -1,6 +1,6 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
-let profile = require("../profile.json");
+let profile = require("../database.json");
 module.exports.run = async (bot,message,args) => {
     try{
         
