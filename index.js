@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
 const Languages = require('./Languages.json');
-const profile = require("./profile.json");
+const profile = require("./users.json");
 const ms = require("ms");
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
@@ -140,7 +140,7 @@ bot.on("message", async message => {
       lvl:0
     };
   };
-  fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
+  fs.writeFile('./users.json',JSON.stringify(profile),(err)=>{
     if(err) console.log(err);
   });
   let u = profile[uid];
