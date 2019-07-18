@@ -140,7 +140,7 @@ bot.on("message", async message => {
       lvl:0
     };
   };
-  fs.writeFile('./users.json',JSON.stringify(database),(err)=>{
+  fs.writeFile('./database.json',JSON.stringify(database),(err)=>{
     if(err) console.log(err);
   });
   let u = database[uid];
@@ -160,7 +160,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription("**Version bot 3.1*")
+    .setDescription("**Version bot 3.3*")
     .setColor("#d71868")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
