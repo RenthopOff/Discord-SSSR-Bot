@@ -140,6 +140,9 @@ bot.on("message", async message => {
       lvl:0
     };
   };
+  fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
+    if(err) console.log(err);
+  });
   let args = messageArray.slice(1);
   let sender = message.author;
   let msg = message.content.toUpperCase();
