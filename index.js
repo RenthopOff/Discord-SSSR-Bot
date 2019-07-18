@@ -140,7 +140,7 @@ bot.on("message", async message => {
       lvl:0
     };
   };
-  fs.writeFile('./users.json',JSON.stringify(profile),(err)=>{
+  fs.writeFile('./users.json',JSON.stringify(users),(err)=>{
     if(err) console.log(err);
   });
   let u = profile[uid];
