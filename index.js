@@ -4,6 +4,7 @@ const Languages = require('./Languages.json');
 const ms = require("ms");
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
+const profile = require("./DataWarns.json");
 const RichEmbed = require('discord.js');
 const moment = require('moment');
 const superagent = require('superagent');
