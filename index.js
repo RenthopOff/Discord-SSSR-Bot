@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
 const Languages = require('./Languages.json');
-const database = require("./database.json");
 const ms = require("ms");
 const prefix = botconfig.prefix;
 const Attachment = require('discord.js');
@@ -131,14 +130,6 @@ bot.on("message", async message => {
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
-  if(!database[message.author.id]){
-    database[message.author.id] = {
-      warns: 0
-    };
-  }
-  fs.writeFile('./database.json',JSON.stringify(database),(err)=>{
-    if(err) console.log(err);
-  });
   let args = messageArray.slice(1);
   let sender = message.author;
   let msg = message.content.toUpperCase();
