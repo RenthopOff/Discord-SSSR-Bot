@@ -77,8 +77,8 @@ fs.readdir("./modules/", (err, files) => {
 
 });
 bot.on('ready', () => {
-    console.log(`${bot.user.username} online`);
-    bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 3.3', type: 0}})
+    console.log(`${bot.user.username} online and ready to work man!`);
+    bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 3.4', type: 0}})
 });
 bot.on('channelCreate', async channel => {
 
@@ -98,11 +98,11 @@ bot.on('guildMemberAdd', member => {
         .setColor("#d71868")
         .setTitle(`*Welcome message*`)
         .setDescription(`Приветствую тебя ${member} в ⭐ S S S R ⭐.\n *Будь как дома 💗*`)
-        .setThumbnail(memberavatar) 
+        .setThumbnail(memberavatar)
         .setTimestamp();
-        
+
         member.addRole(role);
-  
+
         channel.sendEmbed(embed);
 });
 bot.on('guildMemberAdd', member => {
@@ -126,7 +126,18 @@ bot.on('guildMemberRemove', member => {
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-
+  let uid = message.author.id;
+  bot.send = function (msg){
+      message.channel.send(msg);
+  };
+  if(!profile[uid]){
+      profile[uid] ={
+          warns:0
+      };
+  };
+  fs.writeFile('./DataWarns.json',JSON.stringify(profile),(err)=>{
+      if(err) console.log(err);
+  });
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
@@ -140,7 +151,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription("**Version bot 3.3*")
+    .setDescription("**Version bot 3.4*")
     .setColor("#d71868")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
