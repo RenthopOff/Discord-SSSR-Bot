@@ -152,7 +152,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription("**Version bot 3.4*")
+    .setDescription("**Version bot 2.0*")
     .setColor("#d71868")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
