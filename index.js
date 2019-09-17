@@ -187,6 +187,10 @@ bot.on("message", async message => {
     .addField("**Кол-во Ролей**", message.guild.roles.size, true);
     return message.channel.send(serverembed);
   }
+  
+  if(message.startsWith ("kak kakat")){
+    message.channel.send("Kakat?", {file})
+  }
   if(cmd === `${prefix}kick`){
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Не могу найти пользователя!");
