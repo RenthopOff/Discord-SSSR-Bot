@@ -79,7 +79,7 @@ fs.readdir("./modules/", (err, files) => {
 });
 bot.on('ready', () => {
     console.log(`${bot.user.username} online and ready to work man!`);
-    bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 2.0 | Use /help', type: 0}})
+    bot.user.setPresence({status: 'WATCHING', game:{name: 'My version is 2.1 | Use /help', type: 0}})
 });
 bot.on('channelCreate', async channel => {
 
@@ -152,7 +152,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription("**Version bot 2.0*")
+    .setDescription("**Version bot 2.1*")
     .setColor("#d71868")
     .setThumbnail(bicon)
     .addField("**Cоздатель**", message.guild.owner)
